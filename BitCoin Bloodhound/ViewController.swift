@@ -10,6 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var currencyPicker: UIPickerView!
+    
+    
+    @IBOutlet weak var bitCoinPriceLabel: UILabel!
+    
     
     let currencyArray = ["AUD", "BRL","CAD","CNY","EUR","GBP","HKD","IDR","ILS","INR","JPY","MXN","NOK","NZD","PLN","RON","RUB","SEK","SGD","USD","ZAR"] //array of all the currency abbreviations
     
@@ -25,6 +30,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    
+    
 }
 
