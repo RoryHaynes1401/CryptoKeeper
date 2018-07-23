@@ -31,7 +31,16 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lw2-7e-BLO" userLabel="Bottom View">
                                 <rect key="frame" x="0.0" y="418" width="414" height="318"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4P-By-kCu">
+                                        <rect key="frame" x="47" y="51" width="320" height="216"/>
+                                    </pickerView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="j4P-By-kCu" firstAttribute="centerX" secondItem="Lw2-7e-BLO" secondAttribute="centerX" id="BgW-x0-ow0"/>
+                                    <constraint firstItem="j4P-By-kCu" firstAttribute="centerY" secondItem="Lw2-7e-BLO" secondAttribute="centerY" id="Wwe-xF-QX0"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
