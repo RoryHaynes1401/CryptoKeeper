@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,37 +15,36 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BitCoin_Bloodhound" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoin" translatesAutoresizingMaskIntoConstraints="NO" id="pGR-Mq-1i8">
-                                <rect key="frame" x="112" y="94" width="150" height="150"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select a Currency" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yc7-w5-tdX">
-                                <rect key="frame" x="112" y="324" width="150" height="19"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gPF-eE-2Xx" userLabel="Top View">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="368"/>
+                                <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lw2-7e-BLO" userLabel="Bottom View">
+                                <rect key="frame" x="0.0" y="368" width="414" height="368"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="pGR-Mq-1i8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="112" id="Mh9-Nf-hyw"/>
-                            <constraint firstItem="pGR-Mq-1i8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SJD-hb-pIM"/>
-                            <constraint firstItem="pGR-Mq-1i8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="74" id="U5Z-YV-hfa"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pGR-Mq-1i8" secondAttribute="bottom" constant="423" id="W4h-na-kC5"/>
+                            <constraint firstItem="gPF-eE-2Xx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2Mx-el-yaR"/>
+                            <constraint firstItem="Lw2-7e-BLO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Fzd-JA-M4n"/>
+                            <constraint firstItem="Lw2-7e-BLO" firstAttribute="top" secondItem="gPF-eE-2Xx" secondAttribute="bottom" id="Jp9-dK-Z8w"/>
+                            <constraint firstItem="Lw2-7e-BLO" firstAttribute="height" secondItem="gPF-eE-2Xx" secondAttribute="height" id="MUY-hU-tqL"/>
+                            <constraint firstItem="Lw2-7e-BLO" firstAttribute="top" secondItem="gPF-eE-2Xx" secondAttribute="bottom" id="aUf-HT-SJH"/>
+                            <constraint firstItem="Lw2-7e-BLO" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="bRv-eI-eo8"/>
+                            <constraint firstItem="gPF-eE-2Xx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dM6-cU-2DS"/>
+                            <constraint firstItem="Lw2-7e-BLO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="mx5-fA-fnQ"/>
+                            <constraint firstItem="gPF-eE-2Xx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zCH-fJ-fYf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="-159.42028985507247" y="45.652173913043484"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="bitcoin" width="640" height="640"/>
-    </resources>
 </document>
