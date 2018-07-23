@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +21,18 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gPF-eE-2Xx" userLabel="Top View">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="318"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoin" translatesAutoresizingMaskIntoConstraints="NO" id="5yb-fI-Tdx">
+                                        <rect key="frame" x="104" y="79.666666666666671" width="207" height="159.33333333333331"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="5yb-fI-Tdx" firstAttribute="centerX" secondItem="gPF-eE-2Xx" secondAttribute="centerX" id="jIa-Dw-kaV"/>
+                                    <constraint firstItem="5yb-fI-Tdx" firstAttribute="centerY" secondItem="gPF-eE-2Xx" secondAttribute="centerY" id="sIQ-MC-ghi"/>
+                                    <constraint firstItem="5yb-fI-Tdx" firstAttribute="width" secondItem="gPF-eE-2Xx" secondAttribute="width" multiplier="0.5" id="uZ3-ke-IJN"/>
+                                    <constraint firstItem="5yb-fI-Tdx" firstAttribute="height" secondItem="gPF-eE-2Xx" secondAttribute="height" multiplier="0.5" id="v18-Af-CXQ"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEJ-oQ-c91" userLabel="Middle View">
                                 <rect key="frame" x="0.0" y="318" width="414" height="100"/>
@@ -66,4 +78,7 @@
             <point key="canvasLocation" x="-159.42028985507247" y="45.652173913043484"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bitcoin" width="640" height="640"/>
+    </resources>
 </document>
