@@ -31,8 +31,30 @@ extension CurrencyPicker: UIPickerViewDataSource {
 
 extension CurrencyPicker: UIPickerViewDelegate {
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return currencyModelData.listOfCurrencyInformation[row].currencyCode //the title for each row will be the string found at the corresponding listOfCurrencyInformation array element
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat { //define height of each component
+        return 100
+    }
+    
+    
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100)) //the frame for the pickerview view
+        
+        let toplabel = UILabel(frame: CGRect(x: 0, y: 5, width: 100, height: 30)) // for the currency code
+        
+        let bottomImage = UIImageView(frame: CGRect(x: 0, y: 40, width: 100, height: 50)) // for the image
+        toplabel.text = currencyModelData.listOfCurrencyInformation[row].currencyCode
+        toplabel.textAlignment = .center
+        toplabel.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.bold)
+        
+        bottomImage.image = currencyModelData.listOfCurrencyInformation[row].currencyFlag
+        view.addSubview(toplabel)
+        view.addSubview(bottomImage)
+        
+        return view
+        
+        
     }
     
 }
