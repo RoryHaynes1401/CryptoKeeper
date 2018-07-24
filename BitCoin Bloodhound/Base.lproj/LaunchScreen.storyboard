@@ -18,26 +18,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowyhappyface" translatesAutoresizingMaskIntoConstraints="NO" id="aOd-oc-sby">
-                                <rect key="frame" x="87" y="233" width="200" height="200"/>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BitCoin BloodHound" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XC3-3Y-hQr">
+                                <rect key="frame" x="95" y="324" width="184" height="19.5"/>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldItalicMT" family="Courier New" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="aOd-oc-sby" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1B0-YI-23B"/>
-                            <constraint firstItem="aOd-oc-sby" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="RrT-JR-SMT"/>
-                            <constraint firstItem="aOd-oc-sby" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="213" id="Z7f-Eh-ELz"/>
-                            <constraint firstItem="aOd-oc-sby" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="gNP-Lh-UCS"/>
+                            <constraint firstItem="XC3-3Y-hQr" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="JPC-Pt-umJ"/>
+                            <constraint firstItem="XC3-3Y-hQr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Jwu-5O-zhg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+            <point key="canvasLocation" x="-167" y="375"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="snowyhappyface" width="1146" height="1146"/>
-    </resources>
 </document>
