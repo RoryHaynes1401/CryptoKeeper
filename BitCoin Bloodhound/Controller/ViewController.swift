@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let allCurrency = CurrencyModel() //creating a constant referring to the CurrencyModel
+    var allCurrency = CurrencyModel() //creating a constant referring to the CurrencyModel
     
     var currencyModelPicker: CurrencyPicker! // a var of type CurrencyPicker class
     
@@ -30,6 +30,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(pickerChanged), name: Notification.Name.pickerHasChanged, object: nil)
+        
         currencyModelPicker = CurrencyPicker() // an instance of the CurrencyPicker
         
        
@@ -39,36 +41,18 @@ class ViewController: UIViewController {
         
     }
     
-    //MARK:- pickerview delegates and functions
-    
-//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-//        return 1 // to display 1 row in the picker
-//    }
-//
-//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//        return allCurrency.listOfCurrencyInformation.count //the number of components should be equal to the number of elements in the listOfCurrencyInformation array
-//    }
-//
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        return allCurrency.listOfCurrencyInformation[row].currencyCode //the title for each row will be the string found at the corresponding listOfCurrencyInformation array element
-//    }
-//
-//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        print(row)
-//
-//        bitCoinPriceLabel.text = allCurrency.listOfCurrencyInformation[row].currencyCode
-//         bitCoinImage.image = allCurrency.listOfCurrencyInformation[row].currencyFlag // the currency code found at the corresponding listOfCurrencyInformation array element's text and flag properties
-//    }
-//
-   
+  
     
     
 
     
-    
-
-    
-    
+    @objc func pickerChanged(){
+        
+        
+        bitCoinPriceLabel.text = "pickerChanged" //testing notification centre
+        
+        
+    }
    
 
     
