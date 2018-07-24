@@ -54,14 +54,38 @@
 		C0E9BCD32105DA4C00DE51EE /* BitCoin Bloodhound */ = {
 			isa = PBXGroup;
 			children = (
-				C0E9BCD42105DA4C00DE51EE /* AppDelegate.swift */,
-				C0E9BCD62105DA4C00DE51EE /* ViewController.swift */,
-				C0E9BCD82105DA4C00DE51EE /* Main.storyboard */,
+				C0E9BCE72106E87C00DE51EE /* Model */,
+				C0E9BCE82106E88D00DE51EE /* View */,
+				C0E9BCE92106E89B00DE51EE /* Controller */,
 				C0E9BCDB2105DA5100DE51EE /* Assets.xcassets */,
 				C0E9BCDD2105DA5100DE51EE /* LaunchScreen.storyboard */,
 				C0E9BCE02105DA5100DE51EE /* Info.plist */,
 			);
 			path = "BitCoin Bloodhound";
+			sourceTree = "<group>";
+		};
+		C0E9BCE72106E87C00DE51EE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C0E9BCE82106E88D00DE51EE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C0E9BCD82105DA4C00DE51EE /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C0E9BCE92106E89B00DE51EE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C0E9BCD42105DA4C00DE51EE /* AppDelegate.swift */,
+				C0E9BCD62105DA4C00DE51EE /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
