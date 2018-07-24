@@ -10,15 +10,20 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    let allCurrency = CurrencyModel() //creating a constant referring to the CurrencyModel
+    
+    
+    
     //MARK:- Storyboard Connections
+    @IBOutlet weak var bitCoinImage: UIImageView! //To change teh bitcoin image
     
-        @IBOutlet weak var currencyPicker: UIPickerView!
+    @IBOutlet weak var currencyPicker: UIPickerView! //To set up the pickerview
     
-        @IBOutlet weak var bitCoinPriceLabel: UILabel!
+    @IBOutlet weak var bitCoinPriceLabel: UILabel!  //To change the price of the bitcoin according to the currency
     
     //TODO:- Move data to model folder
     
-    let currencyArray = ["AUD", "BRL","CAD","CNY","EUR","GBP","HKD","IDR","ILS","INR","JPY","MXN","NOK","NZD","PLN","RON","RUB","SEK","SGD","USD","ZAR"] //array of all the currency abbreviations
+    
     
     //TODO:- Add an array of flag images?? (or add images to picker directly)
     
@@ -27,7 +32,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         currencyPicker.delegate = self
         currencyPicker.dataSource = self
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        
     }
     
     //MARK:- pickerview delegates and functions
@@ -37,16 +44,18 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return currencyArray.count //the number of components should be equal to the number of elements in the array
+        return allCurrency.listOfCurrencyInformation.count //the number of components should be equal to the number of elements in the listOfCurrencyInformation array
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return currencyArray[row] //the title for each row will be the string found at the corresponding array element
+        return allCurrency.listOfCurrencyInformation[row].currencyCode //the title for each row will be the string found at the corresponding listOfCurrencyInformation array element
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         print(row)
-        bitCoinPriceLabel.text = currencyArray[row]
+        
+        bitCoinPriceLabel.text = allCurrency.listOfCurrencyInformation[row].currencyCode
+         bitCoinImage.image = allCurrency.listOfCurrencyInformation[row].currencyFlag // the currency code found at the corresponding listOfCurrencyInformation array element's text and flag properties
     }
     
     //TODO:- add images to the picker (or add flags directly to the array)
