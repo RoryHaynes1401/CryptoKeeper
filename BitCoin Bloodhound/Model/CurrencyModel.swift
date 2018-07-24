@@ -15,16 +15,25 @@ class CurrencyModel {
     
     init(){  //all the data for all the currency
         
-        let item = Currency(code: "GBP", flag: UIImage(named: "GBP")!) //example of a currenct and flag item being appended
+
         
-        listOfCurrencyInformation.append(item)
         
-        listOfCurrencyInformation.append(Currency(code: "USD", flag: UIImage(named: "USD")!)) //single line create and append
+        
+        listOfCurrencyInformation.append(Currency(code: "AUD", flag: UIImage(named: "GBP")!)) //create and append currency code and flag to the Currency array
+        listOfCurrencyInformation.append(Currency(code: "BRL", flag: UIImage(named: "GBP")!))
+        listOfCurrencyInformation.append(Currency(code: "CAD", flag: UIImage(named: "GBP")!))
+        listOfCurrencyInformation.append(Currency(code: "EUR", flag: UIImage(named: "GBP")!))
+        listOfCurrencyInformation.append(Currency(code: "GBP", flag: UIImage(named: "GBP")!))
+        
+        //TODO:- Add and update flags and images
+        //TODO:- Add the rest of the members
+        
+        listOfCurrencyInformation.append(Currency(code: "USD", flag: UIImage(named: "USD")!))
         
         
     }
     //TODO:- add currency and flags to listOfCurrencyInformation Array
-    //let currencyArray = ["AUD", "BRL","CAD","CNY","EUR","GBP","HKD","IDR","ILS","INR","JPY","MXN","NOK","NZD","PLN","RON","RUB","SEK","SGD","USD","ZAR"] //array of all the currency abbreviations
+    //let currencyArray = ["HKD","IDR","ILS","INR","JPY","MXN","NOK","NZD","PLN","RON","RUB","SEK","SGD","USD","ZAR"] //array of all the currency abbreviations
     
     
     
