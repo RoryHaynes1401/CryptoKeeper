@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		482D92063C2E385D3FA8C8F2 /* Pods_BitCoin_Bloodhound.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F52ECBB7062802B8E25F513B /* Pods_BitCoin_Bloodhound.framework */; };
 		C0E9BCD52105DA4C00DE51EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9BCD42105DA4C00DE51EE /* AppDelegate.swift */; };
 		C0E9BCD72105DA4C00DE51EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9BCD62105DA4C00DE51EE /* ViewController.swift */; };
 		C0E9BCDA2105DA4C00DE51EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0E9BCD82105DA4C00DE51EE /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F1B8B628694EB39AD07E7E5 /* Pods-BitCoin Bloodhound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitCoin Bloodhound.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitCoin Bloodhound/Pods-BitCoin Bloodhound.release.xcconfig"; sourceTree = "<group>"; };
 		C0E9BCD12105DA4C00DE51EE /* BitCoin Bloodhound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BitCoin Bloodhound.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E9BCD42105DA4C00DE51EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0E9BCD62105DA4C00DE51EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +32,8 @@
 		C0E9BCEF2106ED4B00DE51EE /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		C0E9BCF12106ED5A00DE51EE /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
 		C0E9BCF32107936100DE51EE /* NotificationNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExtension.swift; sourceTree = "<group>"; };
+		E4B1D724E24D13C725147236 /* Pods-BitCoin Bloodhound.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitCoin Bloodhound.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BitCoin Bloodhound/Pods-BitCoin Bloodhound.debug.xcconfig"; sourceTree = "<group>"; };
+		F52ECBB7062802B8E25F513B /* Pods_BitCoin_Bloodhound.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitCoin_Bloodhound.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				482D92063C2E385D3FA8C8F2 /* Pods_BitCoin_Bloodhound.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +53,8 @@
 			children = (
 				C0E9BCD32105DA4C00DE51EE /* BitCoin Bloodhound */,
 				C0E9BCD22105DA4C00DE51EE /* Products */,
+				E2EEAD3CCE51349FBCE1416A /* Pods */,
+				EA0A26A9137B07D244CEB645 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +107,23 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		E2EEAD3CCE51349FBCE1416A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E4B1D724E24D13C725147236 /* Pods-BitCoin Bloodhound.debug.xcconfig */,
+				3F1B8B628694EB39AD07E7E5 /* Pods-BitCoin Bloodhound.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EA0A26A9137B07D244CEB645 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F52ECBB7062802B8E25F513B /* Pods_BitCoin_Bloodhound.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -107,9 +131,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C0E9BCE32105DA5100DE51EE /* Build configuration list for PBXNativeTarget "BitCoin Bloodhound" */;
 			buildPhases = (
+				CB858E7DA6C48FDA6C5CCB34 /* [CP] Check Pods Manifest.lock */,
 				C0E9BCCD2105DA4C00DE51EE /* Sources */,
 				C0E9BCCE2105DA4C00DE51EE /* Frameworks */,
 				C0E9BCCF2105DA4C00DE51EE /* Resources */,
+				CC1D350C1D77D960CBA6917B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -165,6 +191,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CB858E7DA6C48FDA6C5CCB34 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BitCoin Bloodhound-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC1D350C1D77D960CBA6917B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BitCoin Bloodhound/Pods-BitCoin Bloodhound-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BitCoin Bloodhound/Pods-BitCoin Bloodhound-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C0E9BCCD2105DA4C00DE51EE /* Sources */ = {
@@ -318,6 +385,7 @@
 		};
 		C0E9BCE42105DA5100DE51EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4B1D724E24D13C725147236 /* Pods-BitCoin Bloodhound.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -336,6 +404,7 @@
 		};
 		C0E9BCE52105DA5100DE51EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F1B8B628694EB39AD07E7E5 /* Pods-BitCoin Bloodhound.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
