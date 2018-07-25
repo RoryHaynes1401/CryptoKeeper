@@ -16,6 +16,10 @@ class ViewController: UIViewController {
     
     var currencyPickerRow : Int = 0 // default selected row
     
+    var baseBitCoinDataUrl  = "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTC"
+    
+    var finalBitCoinDataUrl = ""
+    
     
     
     //MARK:- Storyboard Connections
@@ -59,7 +63,9 @@ class ViewController: UIViewController {
         print(currencyPickerRow)
         
         bitCoinPriceLabel.text = allCurrency.listOfCurrencyInformation[currencyPickerRow].currencyCode
-       
+        
+        finalBitCoinDataUrl = baseBitCoinDataUrl + allCurrency.listOfCurrencyInformation[currencyPickerRow].currencyCode
+        print(finalBitCoinDataUrl)
     }
    
 
