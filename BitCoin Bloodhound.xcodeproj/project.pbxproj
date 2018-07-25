@@ -17,6 +17,7 @@
 		C0E9BCF02106ED4B00DE51EE /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9BCEF2106ED4B00DE51EE /* Currency.swift */; };
 		C0E9BCF22106ED5A00DE51EE /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9BCF12106ED5A00DE51EE /* CurrencyModel.swift */; };
 		C0E9BCF42107936100DE51EE /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9BCF32107936100DE51EE /* NotificationNameExtension.swift */; };
+		C0E9BCF621088A7F00DE51EE /* JSONData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9BCF521088A7F00DE51EE /* JSONData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C0E9BCEF2106ED4B00DE51EE /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		C0E9BCF12106ED5A00DE51EE /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
 		C0E9BCF32107936100DE51EE /* NotificationNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExtension.swift; sourceTree = "<group>"; };
+		C0E9BCF521088A7F00DE51EE /* JSONData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONData.swift; sourceTree = "<group>"; };
 		E4B1D724E24D13C725147236 /* Pods-BitCoin Bloodhound.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitCoin Bloodhound.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BitCoin Bloodhound/Pods-BitCoin Bloodhound.debug.xcconfig"; sourceTree = "<group>"; };
 		F52ECBB7062802B8E25F513B /* Pods_BitCoin_Bloodhound.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitCoin_Bloodhound.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -85,6 +87,7 @@
 			children = (
 				C0E9BCEF2106ED4B00DE51EE /* Currency.swift */,
 				C0E9BCF12106ED5A00DE51EE /* CurrencyModel.swift */,
+				C0E9BCF521088A7F00DE51EE /* JSONData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				C0E9BCEC2106EC5800DE51EE /* CurrencyPicker.swift in Sources */,
 				C0E9BCF42107936100DE51EE /* NotificationNameExtension.swift in Sources */,
 				C0E9BCD72105DA4C00DE51EE /* ViewController.swift in Sources */,
+				C0E9BCF621088A7F00DE51EE /* JSONData.swift in Sources */,
 				C0E9BCD52105DA4C00DE51EE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
