@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     
     var currencyModelPicker: CurrencyPicker! // a var of type CurrencyPicker class
     
+    var currencyPickerRow : Int = 0 // default selected row
+    
     
     
     //MARK:- Storyboard Connections
@@ -30,7 +32,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(pickerChanged), name: Notification.Name.pickerHasChanged, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData(_:)), name: Notification.Name.pickerHasChanged, object: nil)
         
         currencyModelPicker = CurrencyPicker() // an instance of the CurrencyPicker
         
@@ -46,12 +48,18 @@ class ViewController: UIViewController {
     
 
     
-    @objc func pickerChanged(){
+    @objc func onDidReceiveData(_ notification:Notification) {
         
+        if let pickerRow = notification.userInfo?["rowSelected"] {
         
-        bitCoinPriceLabel.text = "pickerChanged" //testing notification centre
+            currencyPickerRow = pickerRow as! Int //takes the userInfo data from the Notification centre, and assigns the selected row to the variable currencyPickerRow
+            
+            
+        }
+        print(currencyPickerRow)
         
-        
+        bitCoinPriceLabel.text = allCurrency.listOfCurrencyInformation[currencyPickerRow].currencyCode
+       
     }
    
 
