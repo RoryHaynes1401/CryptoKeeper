@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,27 +15,65 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CryptoKeeper" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XC3-3Y-hQr">
-                                <rect key="frame" x="126" y="324" width="122.5" height="19.5"/>
-                                <fontDescription key="fontDescription" name="CourierNewPS-BoldItalicMT" family="Courier New" pointSize="17"/>
-                                <color key="textColor" red="0.84313725490196079" green="0.6470588235294118" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WGq-pw-OCE" userLabel="TopView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="368"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CryptoKeeper" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XC3-3Y-hQr">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="368"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPS-BoldItalicMT" family="Courier New" pointSize="31"/>
+                                        <color key="textColor" red="0.84313725490196079" green="0.6470588235294118" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="XC3-3Y-hQr" secondAttribute="bottom" id="0Dn-BV-2YE"/>
+                                    <constraint firstAttribute="trailing" secondItem="XC3-3Y-hQr" secondAttribute="trailing" id="j6K-LF-qIY"/>
+                                    <constraint firstItem="XC3-3Y-hQr" firstAttribute="leading" secondItem="WGq-pw-OCE" secondAttribute="leading" id="pzT-NO-zFq"/>
+                                    <constraint firstItem="XC3-3Y-hQr" firstAttribute="top" secondItem="WGq-pw-OCE" secondAttribute="top" id="sJ0-1V-9Cz"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JwF-6L-taN" userLabel="BottomView">
+                                <rect key="frame" x="0.0" y="368" width="414" height="368"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cryptocurrency-3415066_1920" translatesAutoresizingMaskIntoConstraints="NO" id="DUn-lk-tOf">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="368"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="DUn-lk-tOf" firstAttribute="leading" secondItem="JwF-6L-taN" secondAttribute="leading" id="4Up-CM-s8F"/>
+                                    <constraint firstAttribute="bottom" secondItem="DUn-lk-tOf" secondAttribute="bottom" id="NQN-M7-sO2"/>
+                                    <constraint firstItem="DUn-lk-tOf" firstAttribute="top" secondItem="JwF-6L-taN" secondAttribute="top" id="dbS-7L-MTk"/>
+                                    <constraint firstAttribute="trailing" secondItem="DUn-lk-tOf" secondAttribute="trailing" id="nHC-6B-7HZ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.33725490196078434" green="0.25882352941176467" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="XC3-3Y-hQr" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="JPC-Pt-umJ"/>
-                            <constraint firstItem="XC3-3Y-hQr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Jwu-5O-zhg"/>
+                            <constraint firstItem="JwF-6L-taN" firstAttribute="height" secondItem="WGq-pw-OCE" secondAttribute="height" id="5JZ-Q6-h2v"/>
+                            <constraint firstItem="WGq-pw-OCE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6CH-SQ-Fmb"/>
+                            <constraint firstItem="JwF-6L-taN" firstAttribute="top" secondItem="WGq-pw-OCE" secondAttribute="bottom" id="OnZ-HL-l2O"/>
+                            <constraint firstItem="JwF-6L-taN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Rda-Fd-oOZ"/>
+                            <constraint firstItem="WGq-pw-OCE" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="SCF-9w-3zb"/>
+                            <constraint firstItem="JwF-6L-taN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="oOn-Dr-ajE"/>
+                            <constraint firstItem="JwF-6L-taN" firstAttribute="top" secondItem="WGq-pw-OCE" secondAttribute="bottom" id="pcw-ZA-c7H"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JwF-6L-taN" secondAttribute="bottom" id="vTU-Fd-A9w"/>
+                            <constraint firstItem="WGq-pw-OCE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="y88-8t-TWt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-167" y="375"/>
+            <point key="canvasLocation" x="-167.19999999999999" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cryptocurrency-3415066_1920" width="1920" height="1286"/>
+    </resources>
 </document>
