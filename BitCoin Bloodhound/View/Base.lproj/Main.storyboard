@@ -23,10 +23,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="318"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoin" translatesAutoresizingMaskIntoConstraints="NO" id="5yb-fI-Tdx">
-                                        <rect key="frame" x="104" y="80" width="207" height="159"/>
+                                        <rect key="frame" x="103.66666666666669" y="80" width="207" height="159"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.84313725490196079" green="0.6470588235294118" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.33725490196078434" green="0.25882352941176467" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="5yb-fI-Tdx" firstAttribute="centerX" secondItem="gPF-eE-2Xx" secondAttribute="centerX" id="jIa-Dw-kaV"/>
                                     <constraint firstItem="5yb-fI-Tdx" firstAttribute="centerY" secondItem="gPF-eE-2Xx" secondAttribute="centerY" id="sIQ-MC-ghi"/>
@@ -39,8 +39,9 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFc-sD-TMw">
                                         <rect key="frame" x="0.0" y="0.66666666666668561" width="414" height="100"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.33725490196078434" green="0.25882352941176467" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.33725490200000002" green="0.25882352939999997" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="30"/>
+                                        <color key="textColor" red="0.84313725490196079" green="0.6470588235294118" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -57,13 +58,34 @@
                                 <rect key="frame" x="0.0" y="418" width="414" height="318"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4P-By-kCu">
-                                        <rect key="frame" x="47" y="51.666666666666686" width="320" height="216"/>
+                                        <rect key="frame" x="47" y="51" width="320" height="216"/>
                                     </pickerView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prices provided by http://bitcoinaverage.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2i-au-4I4">
+                                        <rect key="frame" x="47" y="298" width="320" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" red="0.84313725490196079" green="0.6470588235294118" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Updated" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obe-YR-jFr">
+                                        <rect key="frame" x="47" y="0.0" width="320" height="15.666666666666666"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.84313725490196079" green="0.6470588235294118" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.33725490196078434" green="0.25882352941176467" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="b2i-au-4I4" secondAttribute="bottom" constant="8" id="0W7-5L-VZ3"/>
+                                    <constraint firstItem="obe-YR-jFr" firstAttribute="leading" secondItem="j4P-By-kCu" secondAttribute="leading" id="9O8-dh-awL"/>
+                                    <constraint firstItem="j4P-By-kCu" firstAttribute="trailing" secondItem="obe-YR-jFr" secondAttribute="trailing" id="ADI-6J-7Qv"/>
                                     <constraint firstItem="j4P-By-kCu" firstAttribute="centerX" secondItem="Lw2-7e-BLO" secondAttribute="centerX" id="BgW-x0-ow0"/>
+                                    <constraint firstItem="b2i-au-4I4" firstAttribute="leading" secondItem="Lw2-7e-BLO" secondAttribute="leading" constant="47" id="EBD-GJ-kmo"/>
+                                    <constraint firstAttribute="trailing" secondItem="b2i-au-4I4" secondAttribute="trailing" constant="47" id="LI2-RA-jVa"/>
+                                    <constraint firstItem="b2i-au-4I4" firstAttribute="trailing" secondItem="j4P-By-kCu" secondAttribute="trailing" id="THg-5t-CHH"/>
                                     <constraint firstItem="j4P-By-kCu" firstAttribute="centerY" secondItem="Lw2-7e-BLO" secondAttribute="centerY" id="Wwe-xF-QX0"/>
+                                    <constraint firstItem="obe-YR-jFr" firstAttribute="top" secondItem="Lw2-7e-BLO" secondAttribute="top" id="b1s-9j-j6w"/>
+                                    <constraint firstItem="obe-YR-jFr" firstAttribute="leading" secondItem="Lw2-7e-BLO" secondAttribute="leading" constant="47" id="ec2-wj-g53"/>
+                                    <constraint firstAttribute="trailing" secondItem="obe-YR-jFr" secondAttribute="trailing" constant="47" id="vtk-F0-HAC"/>
                                 </constraints>
                             </view>
                         </subviews>

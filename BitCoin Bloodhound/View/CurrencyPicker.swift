@@ -49,6 +49,9 @@ extension CurrencyPicker: UIPickerViewDelegate {
         toplabel.text = currencyModelData.listOfCurrencyInformation[row].currencyCode
         toplabel.textAlignment = .center
         toplabel.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.bold)
+        let color1 = hexStringToUIColor(hex: "#D7A554")  //refers to extension that converts hex color to UIColor
+        toplabel.textColor = color1
+        
         
         bottomImage.image = currencyModelData.listOfCurrencyInformation[row].currencyFlag
         

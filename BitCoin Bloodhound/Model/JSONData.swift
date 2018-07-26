@@ -12,11 +12,15 @@ import SwiftyJSON
 
 class JSONData {
     
+    var timeStamp : String = ""
+    
+    
+    
     func getBitCoinData(url: String, completion:@escaping (String) -> Void ) { //method requiring a url that fetches data in the form of a JSON
-        
+        print("alamofire called")
         var updatedBitCoinPrice : String = ""
         
-        Alamofire.request(url, method: .get).responseJSON { (response) in
+        Alamofire.request(url, method: .get).validate().responseJSON { (response) in
             if response.result.isSuccess{
                 
                 print("bitcoincurrency data received successfully")
@@ -27,21 +31,16 @@ class JSONData {
                 completion (updatedBitCoinPrice)
                 
             }
-            else{
+            else if response.result.isFailure {
                 
                 print("Error")
                 
-                updatedBitCoinPrice = "Error"
-                
+                updatedBitCoinPrice = "?? - No internet"
+
                 completion (updatedBitCoinPrice)
             }
         }
-        
-        
-        
-        
-        
-        
+  
         
     }
     
@@ -77,36 +76,25 @@ class JSONData {
             
             //format time
             print("time: \(updateTime)")
-            
-            
-            
-            
+        
             let formatDate = updateTime.dateChange()
             
             print("formatdate:\(formatDate)")
             
             
-            
-            //todo:- Update time stamp
-            
-            //timeStamp.text = "Updated: " + formatDate + " UTC"
+            timeStamp = "Updated: " + formatDate + " UTC"
         }
             
         else{
             
             
-            //timeStamp.text = "Not updated"
+            timeStamp = "Not updated"
             
         }
         
-        //TODO:- Update return
-        return ""
         
+        return timeStamp
         
     }
-    
-    
-    
-    
     
 }

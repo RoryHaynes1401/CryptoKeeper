@@ -58,7 +58,7 @@ class ViewController: UIViewController {
         
         jSONData.getBitCoinData(url: finalBitCoinDataUrl) { (result) in
             print("view controller result \(result)")
-            self.bitCoinPriceLabel.text = result
+            self.bitCoinPriceLabel.text =  self.allCurrency.listOfCurrencyInformation[self.currencyPickerRow].currencySymbol+result
         }
         //TODO:- add currency symbol
     }

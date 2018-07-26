@@ -14,10 +14,14 @@ class Currency {  //blueprint for the currency data class
     
     
     let currencyCode : String
-    let currencyFlag: UIImage
+    let currencySymbol : String
+    let currencyFlag : UIImage
     
-    init(code: String, flag: UIImage){
+    init(code: String, symbol: String, flag: UIImage){
         currencyCode = code
+        
+        currencySymbol = symbol
+        
         currencyFlag = flag
     }
     
