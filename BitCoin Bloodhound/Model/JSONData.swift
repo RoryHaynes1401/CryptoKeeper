@@ -16,7 +16,7 @@ class JSONData {
     
     
     
-    func getBitCoinData(url: String, completion:@escaping (String) -> Void ) { //method requiring a url that fetches data in the form of a JSON
+    func getBitCoinData(url: String, completion:@escaping (String, String) -> Void ) { //method requiring a url that fetches data in the form of a JSON
         print("alamofire called")
         var updatedBitCoinPrice : String = ""
         
@@ -27,8 +27,7 @@ class JSONData {
                 
                 let bitCoinCurrencyJSON : JSON = JSON(response.result.value!) //force unwrap, as this is only called if a reuslt is found
                 updatedBitCoinPrice = self.updateBitCoinPrice(json: bitCoinCurrencyJSON)
-                print("from alamo \(updatedBitCoinPrice)")
-                completion (updatedBitCoinPrice)
+                completion (updatedBitCoinPrice, self.updateBitCoinTime(json: bitCoinCurrencyJSON))
                 
             }
             else if response.result.isFailure {
@@ -37,7 +36,7 @@ class JSONData {
                 
                 updatedBitCoinPrice = "?? - No internet"
 
-                completion (updatedBitCoinPrice)
+                completion (updatedBitCoinPrice, "Not Updated")
             }
         }
   
@@ -88,7 +87,7 @@ class JSONData {
         else{
             
             
-            timeStamp = "Not updated"
+            timeStamp = "Not Updated"
             
         }
         

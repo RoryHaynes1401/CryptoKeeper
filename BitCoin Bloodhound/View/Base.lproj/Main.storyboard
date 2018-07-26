@@ -110,6 +110,8 @@
                         <outlet property="bitCoinImage" destination="5yb-fI-Tdx" id="Rcd-El-DGC"/>
                         <outlet property="bitCoinPriceLabel" destination="nFc-sD-TMw" id="I4A-xK-pKL"/>
                         <outlet property="currencyPicker" destination="j4P-By-kCu" id="5Vk-hP-NJ5"/>
+                        <outlet property="priceProvidedBy" destination="b2i-au-4I4" id="v0x-6h-zbc"/>
+                        <outlet property="timeUpdateLabel" destination="obe-YR-jFr" id="AJH-vc-FeY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

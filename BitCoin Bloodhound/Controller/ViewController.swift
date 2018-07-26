@@ -28,6 +28,12 @@ class ViewController: UIViewController {
     
     
     //MARK:- Storyboard Connections
+    
+    
+    @IBOutlet weak var priceProvidedBy: UILabel!
+    
+    @IBOutlet weak var timeUpdateLabel: UILabel!
+    
     @IBOutlet weak var bitCoinImage: UIImageView! //To change teh bitcoin image
     
     @IBOutlet weak var currencyPicker: UIPickerView! //To set up the pickerview
@@ -56,9 +62,11 @@ class ViewController: UIViewController {
         
         finalBitCoinDataUrl = baseBitCoinDataUrl + allCurrency.listOfCurrencyInformation[currencyPickerRow].currencyCode
         
-        jSONData.getBitCoinData(url: finalBitCoinDataUrl) { (result) in
+        jSONData.getBitCoinData(url: finalBitCoinDataUrl) { (result,time) in
             print("view controller result \(result)")
-            self.bitCoinPriceLabel.text =  self.allCurrency.listOfCurrencyInformation[self.currencyPickerRow].currencySymbol+result
+            self.bitCoinPriceLabel.text =  self.allCurrency.listOfCurrencyInformation[self.currencyPickerRow].currencySymbol+result //combine currency price with currency symbol
+            self.timeUpdateLabel.text = time
+           
         }
         //TODO:- add currency symbol
     }
