@@ -22,6 +22,7 @@ class CurrencyModel {
         listOfCurrencyInformation.append(Currency(code: "AUD", flag: UIImage(named: "AUD")!)) //create and append currency code and flag to the Currency array
         listOfCurrencyInformation.append(Currency(code: "BRL", flag: UIImage(named: "BRL")!))
         listOfCurrencyInformation.append(Currency(code: "CAD", flag: UIImage(named: "CAD")!))
+        listOfCurrencyInformation.append(Currency(code: "CNY", flag: UIImage(named: "CNY")!))
         listOfCurrencyInformation.append(Currency(code: "EUR", flag: UIImage(named: "EUR")!))
         listOfCurrencyInformation.append(Currency(code: "GBP", flag: UIImage(named: "GBP")!))
         listOfCurrencyInformation.append(Currency(code: "HKD", flag: UIImage(named: "HKD")!))
@@ -42,7 +43,7 @@ class CurrencyModel {
         
         //TODO:- check API for more supported currencies
         
-        
+        // add symbols symbolArray = ["$", "R$", "$", "¥", "€", "£", "$", "Rp", "₪", "₹", "¥", "$", "kr", "$", "zł", "lei", "₽", "kr", "$", "$", "R"]
         
         
     }

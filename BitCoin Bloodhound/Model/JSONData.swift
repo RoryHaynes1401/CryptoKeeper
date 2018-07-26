@@ -12,7 +12,9 @@ import SwiftyJSON
 
 class JSONData {
     
-    func getBitCoinData(url: String) { //method requiring a url that fetches data in the form of a JSON
+    func getBitCoinData(url: String, completion:@escaping (String) -> Void ) { //method requiring a url that fetches data in the form of a JSON
+        
+        var updatedBitCoinPrice : String = ""
         
         Alamofire.request(url, method: .get).responseJSON { (response) in
             if response.result.isSuccess{
@@ -20,12 +22,18 @@ class JSONData {
                 print("bitcoincurrency data received successfully")
                 
                 let bitCoinCurrencyJSON : JSON = JSON(response.result.value!) //force unwrap, as this is only called if a reuslt is found
-                self.updateBitCoinPrice(json: bitCoinCurrencyJSON)
+                updatedBitCoinPrice = self.updateBitCoinPrice(json: bitCoinCurrencyJSON)
+                print("from alamo \(updatedBitCoinPrice)")
+                completion (updatedBitCoinPrice)
                 
             }
             else{
                 
-                print("Error: \(String(describing: response.result.error))")
+                print("Error")
+                
+                updatedBitCoinPrice = "Error"
+                
+                completion (updatedBitCoinPrice)
             }
         }
         
@@ -34,24 +42,68 @@ class JSONData {
         
         
         
+        
     }
     
-    func updateBitCoinPrice(json : JSON){
+    func updateBitCoinPrice(json : JSON)-> (String){
         
         //TODO:- Implement a menthod to parse the JSon, and update the display.
         
+        var bitCoinCurrencyValueResult = ""
+        
         if let bitCoinCurrencyValue = json["ask"].double {
             
-            print(bitCoinCurrencyValue)
+            
+            bitCoinCurrencyValueResult = "\(bitCoinCurrencyValue)"
+            
             
         }
         else {
             
+            
+            //TODO:- print to screen that connection failed
             print("failed")
+            bitCoinCurrencyValueResult = "Failed to find updated price"
             
         }
+        
+        return bitCoinCurrencyValueResult
     }
     
+    
+    func updateBitCoinTime(json : JSON) -> (String){
+        
+        if let updateTime = json["display_timestamp"].string {
+            
+            //format time
+            print("time: \(updateTime)")
+            
+            
+            
+            
+            let formatDate = updateTime.dateChange()
+            
+            print("formatdate:\(formatDate)")
+            
+            
+            
+            //todo:- Update time stamp
+            
+            //timeStamp.text = "Updated: " + formatDate + " UTC"
+        }
+            
+        else{
+            
+            
+            //timeStamp.text = "Not updated"
+            
+        }
+        
+        //TODO:- Update return
+        return ""
+        
+        
+    }
     
     
     

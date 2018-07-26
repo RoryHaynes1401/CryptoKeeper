@@ -18,6 +18,7 @@
 		C0E9BCF22106ED5A00DE51EE /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9BCF12106ED5A00DE51EE /* CurrencyModel.swift */; };
 		C0E9BCF42107936100DE51EE /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9BCF32107936100DE51EE /* NotificationNameExtension.swift */; };
 		C0E9BCF621088A7F00DE51EE /* JSONData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9BCF521088A7F00DE51EE /* JSONData.swift */; };
+		C0E9BCF82108907500DE51EE /* FormatTimeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9BCF72108907500DE51EE /* FormatTimeExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		C0E9BCF12106ED5A00DE51EE /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
 		C0E9BCF32107936100DE51EE /* NotificationNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExtension.swift; sourceTree = "<group>"; };
 		C0E9BCF521088A7F00DE51EE /* JSONData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONData.swift; sourceTree = "<group>"; };
+		C0E9BCF72108907500DE51EE /* FormatTimeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatTimeExtension.swift; sourceTree = "<group>"; };
 		E4B1D724E24D13C725147236 /* Pods-BitCoin Bloodhound.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitCoin Bloodhound.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BitCoin Bloodhound/Pods-BitCoin Bloodhound.debug.xcconfig"; sourceTree = "<group>"; };
 		F52ECBB7062802B8E25F513B /* Pods_BitCoin_Bloodhound.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitCoin_Bloodhound.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -78,6 +80,7 @@
 				C0E9BCDD2105DA5100DE51EE /* LaunchScreen.storyboard */,
 				C0E9BCE02105DA5100DE51EE /* Info.plist */,
 				C0E9BCF32107936100DE51EE /* NotificationNameExtension.swift */,
+				C0E9BCF72108907500DE51EE /* FormatTimeExtension.swift */,
 			);
 			path = "BitCoin Bloodhound";
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0E9BCF22106ED5A00DE51EE /* CurrencyModel.swift in Sources */,
+				C0E9BCF82108907500DE51EE /* FormatTimeExtension.swift in Sources */,
 				C0E9BCF02106ED4B00DE51EE /* Currency.swift in Sources */,
 				C0E9BCEC2106EC5800DE51EE /* CurrencyPicker.swift in Sources */,
 				C0E9BCF42107936100DE51EE /* NotificationNameExtension.swift in Sources */,

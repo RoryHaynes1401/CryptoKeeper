@@ -21,11 +21,11 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BitCoin BloodHound" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XC3-3Y-hQr">
                                 <rect key="frame" x="95" y="324" width="184" height="19.5"/>
                                 <fontDescription key="fontDescription" name="CourierNewPS-BoldItalicMT" family="Courier New" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.84313725490196079" green="0.6470588235294118" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.33725490196078434" green="0.25882352941176467" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="XC3-3Y-hQr" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="JPC-Pt-umJ"/>
                             <constraint firstItem="XC3-3Y-hQr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Jwu-5O-zhg"/>

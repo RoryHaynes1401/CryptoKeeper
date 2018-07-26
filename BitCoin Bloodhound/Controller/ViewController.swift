@@ -25,6 +25,8 @@ class ViewController: UIViewController {
     let jSONData = JSONData() //to get data from JSONData class
     
     
+    
+    
     //MARK:- Storyboard Connections
     @IBOutlet weak var bitCoinImage: UIImageView! //To change teh bitcoin image
     
@@ -53,9 +55,12 @@ class ViewController: UIViewController {
         }
         
         finalBitCoinDataUrl = baseBitCoinDataUrl + allCurrency.listOfCurrencyInformation[currencyPickerRow].currencyCode
-        print(finalBitCoinDataUrl)
         
-        jSONData.getBitCoinData(url: finalBitCoinDataUrl)
+        jSONData.getBitCoinData(url: finalBitCoinDataUrl) { (result) in
+            print("view controller result \(result)")
+            self.bitCoinPriceLabel.text = result
+        }
+        //TODO:- add currency symbol
     }
     
 }
