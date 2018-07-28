@@ -27,7 +27,7 @@ class JSONData {
                 
                 let bitCoinCurrencyJSON : JSON = JSON(response.result.value!) //force unwrap, as this is only called if a reuslt is found
                 updatedBitCoinPrice = self.updateBitCoinPrice(json: bitCoinCurrencyJSON)
-                completion (updatedBitCoinPrice, self.updateBitCoinTime(json: bitCoinCurrencyJSON))
+                completion (updatedBitCoinPrice, self.updateBitCoinTime())
                 
             }
             else if response.result.isFailure {
@@ -69,30 +69,21 @@ class JSONData {
     }
     
     
-    func updateBitCoinTime(json : JSON) -> (String){
+    func updateBitCoinTime() -> (String){
+
+            let now = Date()
         
-        if let updateTime = json["display_timestamp"].string {
-            
-            //format time
-            print("time: \(updateTime)")
+            let formatter = DateFormatter()
         
-            let formatDate = updateTime.dateChange()
-            
-            print("formatdate:\(formatDate)")
-            
-            
-            timeStamp = "Updated: " + formatDate + " UTC"
-        }
-            
-        else{
-            
-            
-            timeStamp = "Not Updated"
-            
-        }
+            formatter.timeZone = TimeZone.current
         
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
-        return timeStamp
+            let dateString = formatter.string(from: now)
+        
+            let timeChange = dateString.dateChange()
+        
+            return timeChange
         
     }
     

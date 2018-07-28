@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,16 +21,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gPF-eE-2Xx" userLabel="Top View">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="318"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoin" translatesAutoresizingMaskIntoConstraints="NO" id="5yb-fI-Tdx">
-                                        <rect key="frame" x="103.66666666666669" y="80" width="207" height="159"/>
-                                    </imageView>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFp-mR-adO">
+                                        <rect key="frame" x="47" y="51" width="320" height="216"/>
+                                    </pickerView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.33725490196078434" green="0.25882352941176467" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="5yb-fI-Tdx" firstAttribute="centerX" secondItem="gPF-eE-2Xx" secondAttribute="centerX" id="jIa-Dw-kaV"/>
-                                    <constraint firstItem="5yb-fI-Tdx" firstAttribute="centerY" secondItem="gPF-eE-2Xx" secondAttribute="centerY" id="sIQ-MC-ghi"/>
-                                    <constraint firstItem="5yb-fI-Tdx" firstAttribute="width" secondItem="gPF-eE-2Xx" secondAttribute="width" multiplier="0.5" id="uZ3-ke-IJN"/>
-                                    <constraint firstItem="5yb-fI-Tdx" firstAttribute="height" secondItem="gPF-eE-2Xx" secondAttribute="height" multiplier="0.5" id="v18-Af-CXQ"/>
+                                    <constraint firstItem="aFp-mR-adO" firstAttribute="centerY" secondItem="gPF-eE-2Xx" secondAttribute="centerY" id="00t-fD-ieF"/>
+                                    <constraint firstItem="aFp-mR-adO" firstAttribute="centerX" secondItem="gPF-eE-2Xx" secondAttribute="centerX" id="OO6-Hy-1lP"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEJ-oQ-c91" userLabel="Middle View">
@@ -39,13 +35,13 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nFc-sD-TMw">
                                         <rect key="frame" x="0.0" y="0.66666666666668561" width="414" height="100"/>
-                                        <color key="backgroundColor" red="0.33725490200000002" green="0.25882352939999997" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="30"/>
                                         <color key="textColor" red="0.84313725490196079" green="0.6470588235294118" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.42741241740000002" green="0.7749730172" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="nFc-sD-TMw" firstAttribute="centerX" secondItem="wEJ-oQ-c91" secondAttribute="centerX" id="13m-Ki-x8R"/>
                                     <constraint firstItem="nFc-sD-TMw" firstAttribute="height" secondItem="wEJ-oQ-c91" secondAttribute="height" id="Nip-Cj-MeW"/>
@@ -73,7 +69,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.33725490196078434" green="0.25882352941176467" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="b2i-au-4I4" secondAttribute="bottom" constant="8" id="0W7-5L-VZ3"/>
                                     <constraint firstItem="obe-YR-jFr" firstAttribute="leading" secondItem="j4P-By-kCu" secondAttribute="leading" id="9O8-dh-awL"/>
@@ -89,7 +85,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="wEJ-oQ-c91" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="117-lS-7RS"/>
                             <constraint firstItem="gPF-eE-2Xx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="6XM-1I-6im"/>
@@ -107,8 +103,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="bitCoinImage" destination="5yb-fI-Tdx" id="Rcd-El-DGC"/>
                         <outlet property="bitCoinPriceLabel" destination="nFc-sD-TMw" id="I4A-xK-pKL"/>
+                        <outlet property="cryptoPicker" destination="aFp-mR-adO" id="wVU-mb-sVo"/>
                         <outlet property="currencyPicker" destination="j4P-By-kCu" id="5Vk-hP-NJ5"/>
                         <outlet property="priceProvidedBy" destination="b2i-au-4I4" id="v0x-6h-zbc"/>
                         <outlet property="timeUpdateLabel" destination="obe-YR-jFr" id="AJH-vc-FeY"/>
@@ -119,7 +115,4 @@
             <point key="canvasLocation" x="-159.42028985507247" y="45.652173913043484"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="bitcoin" width="640" height="640"/>
-    </resources>
 </document>

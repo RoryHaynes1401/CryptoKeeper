@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		482D92063C2E385D3FA8C8F2 /* Pods_BitCoin_Bloodhound.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F52ECBB7062802B8E25F513B /* Pods_BitCoin_Bloodhound.framework */; };
 		C0578C7D2109F62C00B2EA01 /* HexStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0578C7C2109F62C00B2EA01 /* HexStringExtension.swift */; };
+		C0578C7F210B0E4F00B2EA01 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0578C7E210B0E4F00B2EA01 /* Crypto.swift */; };
+		C0578C81210B0E6400B2EA01 /* CryptoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0578C80210B0E6400B2EA01 /* CryptoModel.swift */; };
+		C0578C83210B128A00B2EA01 /* CryptoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0578C82210B128A00B2EA01 /* CryptoPicker.swift */; };
 		C0E9BCD52105DA4C00DE51EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9BCD42105DA4C00DE51EE /* AppDelegate.swift */; };
 		C0E9BCD72105DA4C00DE51EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9BCD62105DA4C00DE51EE /* ViewController.swift */; };
 		C0E9BCDA2105DA4C00DE51EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0E9BCD82105DA4C00DE51EE /* Main.storyboard */; };
@@ -25,6 +28,9 @@
 /* Begin PBXFileReference section */
 		3F1B8B628694EB39AD07E7E5 /* Pods-BitCoin Bloodhound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitCoin Bloodhound.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitCoin Bloodhound/Pods-BitCoin Bloodhound.release.xcconfig"; sourceTree = "<group>"; };
 		C0578C7C2109F62C00B2EA01 /* HexStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexStringExtension.swift; sourceTree = "<group>"; };
+		C0578C7E210B0E4F00B2EA01 /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
+		C0578C80210B0E6400B2EA01 /* CryptoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoModel.swift; sourceTree = "<group>"; };
+		C0578C82210B128A00B2EA01 /* CryptoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoPicker.swift; sourceTree = "<group>"; };
 		C0E9BCD12105DA4C00DE51EE /* BitCoin Bloodhound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BitCoin Bloodhound.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E9BCD42105DA4C00DE51EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0E9BCD62105DA4C00DE51EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +100,8 @@
 				C0E9BCEF2106ED4B00DE51EE /* Currency.swift */,
 				C0E9BCF12106ED5A00DE51EE /* CurrencyModel.swift */,
 				C0E9BCF521088A7F00DE51EE /* JSONData.swift */,
+				C0578C7E210B0E4F00B2EA01 /* Crypto.swift */,
+				C0578C80210B0E6400B2EA01 /* CryptoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -103,6 +111,7 @@
 			children = (
 				C0E9BCD82105DA4C00DE51EE /* Main.storyboard */,
 				C0E9BCEB2106EC5800DE51EE /* CurrencyPicker.swift */,
+				C0578C82210B128A00B2EA01 /* CryptoPicker.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -249,9 +258,12 @@
 			files = (
 				C0E9BCF22106ED5A00DE51EE /* CurrencyModel.swift in Sources */,
 				C0E9BCF82108907500DE51EE /* FormatTimeExtension.swift in Sources */,
+				C0578C7F210B0E4F00B2EA01 /* Crypto.swift in Sources */,
 				C0E9BCF02106ED4B00DE51EE /* Currency.swift in Sources */,
+				C0578C83210B128A00B2EA01 /* CryptoPicker.swift in Sources */,
 				C0E9BCEC2106EC5800DE51EE /* CurrencyPicker.swift in Sources */,
 				C0578C7D2109F62C00B2EA01 /* HexStringExtension.swift in Sources */,
+				C0578C81210B0E6400B2EA01 /* CryptoModel.swift in Sources */,
 				C0E9BCF42107936100DE51EE /* NotificationNameExtension.swift in Sources */,
 				C0E9BCD72105DA4C00DE51EE /* ViewController.swift in Sources */,
 				C0E9BCF621088A7F00DE51EE /* JSONData.swift in Sources */,

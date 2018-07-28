@@ -15,8 +15,6 @@ class CurrencyModel {
     
     init(){  //all the data for all the currency
         
-
-        //TODO:- Add currency sign:
         
         
         listOfCurrencyInformation.append(Currency(code: "AUD", symbol: "$", flag: UIImage(named: "AUD")!)) //create and append currency code and flag to the Currency array

@@ -29,6 +29,7 @@ class ViewController: UIViewController {
     
     //MARK:- Storyboard Connections
     
+    @IBOutlet weak var cryptoPicker: UIPickerView!
     
     @IBOutlet weak var priceProvidedBy: UILabel!
     
@@ -43,6 +44,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         
         NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData(_:)), name: Notification.Name.pickerHasChanged, object: nil)
         
@@ -68,8 +70,8 @@ class ViewController: UIViewController {
             self.timeUpdateLabel.text = time
            
         }
-        //TODO:- add currency symbol
-    }
     
+    }
+   
 }
 
