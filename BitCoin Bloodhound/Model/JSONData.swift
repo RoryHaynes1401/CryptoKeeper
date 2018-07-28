@@ -14,11 +14,20 @@ class JSONData {
     
     var timeStamp : String = ""
     
+     var baseCryptoCurrencyDataURL = "https://min-api.cryptocompare.com/data/price?fsym="
+     var extensionCrytpoCurrencyType = "BTC"
+     var extensionComboURL = "&tsyms="
+     var extensionCurrencyCode = "USD,JPY,EUR"
     
     
-    func getBitCoinData(url: String, completion:@escaping (String, String) -> Void ) { //method requiring a url that fetches data in the form of a JSON
+    
+    func getBitCoinData(cryptoType: String, currencyCode: String, completion:@escaping (String, String) -> Void ) { //method requiring a url that fetches data in the form of a JSON
         print("alamofire called")
         var updatedBitCoinPrice : String = ""
+        
+        let url = baseCryptoCurrencyDataURL+cryptoType+extensionComboURL+currencyCode
+        
+        print(url)
         
         Alamofire.request(url, method: .get).validate().responseJSON { (response) in
             if response.result.isSuccess{
@@ -26,7 +35,8 @@ class JSONData {
                 print("bitcoincurrency data received successfully")
                 
                 let bitCoinCurrencyJSON : JSON = JSON(response.result.value!) //force unwrap, as this is only called if a reuslt is found
-                updatedBitCoinPrice = self.updateBitCoinPrice(json: bitCoinCurrencyJSON)
+                print(bitCoinCurrencyJSON)
+                updatedBitCoinPrice = self.updateBitCoinPrice(currencyCode: currencyCode, json: bitCoinCurrencyJSON)
                 completion (updatedBitCoinPrice, self.updateBitCoinTime())
                 
             }
@@ -43,13 +53,13 @@ class JSONData {
         
     }
     
-    func updateBitCoinPrice(json : JSON)-> (String){
+    func updateBitCoinPrice(currencyCode : String, json : JSON)-> (String){
         
         //TODO:- Implement a menthod to parse the JSon, and update the display.
         
         var bitCoinCurrencyValueResult = ""
         
-        if let bitCoinCurrencyValue = json["ask"].double {
+        if let bitCoinCurrencyValue = json[currencyCode].double {
             
             
             bitCoinCurrencyValueResult = "\(bitCoinCurrencyValue)"
@@ -61,7 +71,7 @@ class JSONData {
             
             //TODO:- print to screen that connection failed
             print("failed")
-            bitCoinCurrencyValueResult = "Failed to find updated price"
+            bitCoinCurrencyValueResult = "No data"
             
         }
         

@@ -16,9 +16,11 @@ class ViewController: UIViewController {
     
     var currencyModelPicker: CurrencyPicker! // a var of type CurrencyPicker class
     
-    var currencyPickerRow : Int = 0 // default selected row
+    var currencyPickerRow : Int = 5 // default selected row
     
     var baseBitCoinDataUrl  = "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTC"
+    
+    var baseCryptoCurrencyDataURL = "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,JPY,EUR"
     
     var finalBitCoinDataUrl = ""
     
@@ -44,13 +46,33 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //TODO:- find correct array member / row from the local currency
+        
+        let locale = Locale.current
+        // let localCurrencySymbol = locale.currencySymbol!
+        let localCurrencyCode = locale.currencyCode!
+        
+        
+        currencyPicker.selectRow(5, inComponent: 0, animated: false)
        
+        //CurrencyPicker(self.currencyPicker, didSelectRow: 0, inComponent: 0)
         
         NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData(_:)), name: Notification.Name.pickerHasChanged, object: nil)
         
         currencyModelPicker = CurrencyPicker() // an instance of the CurrencyPicker
         currencyPicker.delegate = currencyModelPicker
         currencyPicker.dataSource = currencyModelPicker  //assign delegate/datasource
+        
+        //TODO:- find array member for the local currency, and set row
+        if let localCurrencyCodeIndex = allCurrency.listOfCurrencyInformation.index(where: {$0.currencyCode == localCurrencyCode}) {
+                currencyPickerRow = localCurrencyCodeIndex
+                currencyPicker.selectRow(currencyPickerRow, inComponent: 0, animated: false)
+            
+            }
+        
+        updateCurrencyInfo()
+        // currencyModelPicker.pickerView(currencyPicker, didSelectRow: 5, inComponent: 0)  //automatically move to a row
         
     }
     
@@ -62,15 +84,21 @@ class ViewController: UIViewController {
             
         }
         
-        finalBitCoinDataUrl = baseBitCoinDataUrl + allCurrency.listOfCurrencyInformation[currencyPickerRow].currencyCode
+        //finalBitCoinDataUrl = allCurrency.listOfCurrencyInformation[currencyPickerRow].currencyCode
+        //TODO:- UPDATE CRYPTOTYPE
+        updateCurrencyInfo()
+    
+    }
+    
+    
+    func updateCurrencyInfo(){
         
-        jSONData.getBitCoinData(url: finalBitCoinDataUrl) { (result,time) in
+        jSONData.getBitCoinData(cryptoType: "BTC", currencyCode: allCurrency.listOfCurrencyInformation[currencyPickerRow].currencyCode) { (result,time) in
             print("view controller result \(result)")
             self.bitCoinPriceLabel.text =  self.allCurrency.listOfCurrencyInformation[self.currencyPickerRow].currencySymbol+result //combine currency price with currency symbol
             self.timeUpdateLabel.text = time
-           
+        
         }
-    
     }
    
 }
