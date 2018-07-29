@@ -40,6 +40,9 @@ extension CurrencyPicker: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         
+        // self.subviews[0].subviews[1].isHidden = true
+        
+        
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100)) //the frame for the pickerview view
         
         let toplabel = UILabel(frame: CGRect(x: 0, y: 5, width: 100, height: 30)) // for the currency code
@@ -67,9 +70,9 @@ extension CurrencyPicker: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        let rowSelected: [String: Int] = ["rowSelected": row]
+        let currencyRowSelected: [String: Int] = ["currencyRowSelected": row]
         
-        NotificationCenter.default.post(name: Notification.Name.currencyPickerHasChanged, object: nil, userInfo: rowSelected)//send info to ViewController
+        NotificationCenter.default.post(name: Notification.Name.currencyPickerHasChanged, object: nil, userInfo: currencyRowSelected)//send info to ViewController
         
     }
     

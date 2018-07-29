@@ -20,7 +20,9 @@ class ViewController: UIViewController {
     
     var cryptoModelPicker: CryptoPicker! // a var of type CryptoPicker class
     
-    var currencyPickerRow : Int = 5 // default selected row
+    var currencyPickerRow : Int = 0 // default selected Currency row
+    
+    var cryptoPickerRow : Int = 0 // default selected Currency row
     
     var baseBitCoinDataUrl  = "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTC"
     
@@ -29,7 +31,6 @@ class ViewController: UIViewController {
     var finalBitCoinDataUrl = ""
     
     let jSONData = JSONData() //to get data from JSONData class
-    
     
     
     
@@ -62,13 +63,13 @@ class ViewController: UIViewController {
        
         //CurrencyPicker(self.currencyPicker, didSelectRow: 0, inComponent: 0)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData(_:)), name: Notification.Name.currencyPickerHasChanged, object: nil) //get notifications from currency picker
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveCurrencyData(_:)), name: Notification.Name.currencyPickerHasChanged, object: nil) //get notifications from currency picker
         
-         NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData(_:)), name: Notification.Name.cryptoPickerHasChanged, object: nil) //get notifications from crypto picker
+         NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveCryptoData(_:)), name: Notification.Name.cryptoPickerHasChanged, object: nil) //get notifications from crypto picker
         
         currencyModelPicker = CurrencyPicker() // an instance of the CurrencyPicker
         currencyPicker.delegate = currencyModelPicker
-        currencyPicker.dataSource = currencyModelPicker  //assign CurrencyPicker delegate/datasource
+        currencyPicker.dataSource = currencyModelPicker //assign CurrencyPicker delegate/datasource
         
         cryptoModelPicker = CryptoPicker() // an instance of the CryptoPicker
         cryptoPicker.delegate = cryptoModelPicker
@@ -86,9 +87,9 @@ class ViewController: UIViewController {
         
     }
     
-    @objc func onDidReceiveData(_ notification:Notification) {
+    @objc func onDidReceiveCurrencyData(_ notification:Notification) {
         
-        if let pickerRow = notification.userInfo?["rowSelected"] {
+        if let pickerRow = notification.userInfo?["currencyRowSelected"] {
         
             currencyPickerRow = pickerRow as! Int //takes the userInfo data from the Notification centre, and assigns the selected row to the variable currencyPickerRow
             
@@ -100,10 +101,24 @@ class ViewController: UIViewController {
     
     }
     
+    @objc func onDidReceiveCryptoData(_ notification:Notification) {
+        
+        if let pickerRow = notification.userInfo?["cryptoRowSelected"] {
+            
+            cryptoPickerRow = pickerRow as! Int //takes the userInfo data from the Notification centre, and assigns the selected row to the variable currencyPickerRow
+            
+        }
+        
+        //finalBitCoinDataUrl = allCurrency.listOfCurrencyInformation[currencyPickerRow].currencyCode
+        //TODO:- UPDATE CRYPTOTYPE
+        updateCurrencyInfo()
+        
+    }
+    
     
     func updateCurrencyInfo(){
         
-        jSONData.getBitCoinData(cryptoType: "BTC", currencyCode: allCurrency.listOfCurrencyInformation[currencyPickerRow].currencyCode) { (result,time) in
+        jSONData.getBitCoinData(cryptoType: allCrypto.listOfCryptoCurrency[cryptoPickerRow].cryptoCode, currencyCode: allCurrency.listOfCurrencyInformation[currencyPickerRow].currencyCode) { (result,time) in
             print("view controller result \(result)")
             self.bitCoinPriceLabel.text =  self.allCurrency.listOfCurrencyInformation[self.currencyPickerRow].currencySymbol+result //combine currency price with currency symbol
             self.timeUpdateLabel.text = time
