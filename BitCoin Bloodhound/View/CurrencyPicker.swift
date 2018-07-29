@@ -69,7 +69,7 @@ extension CurrencyPicker: UIPickerViewDelegate {
         
         let rowSelected: [String: Int] = ["rowSelected": row]
         
-        NotificationCenter.default.post(name: Notification.Name.pickerHasChanged, object: nil, userInfo: rowSelected)//send info to ViewController
+        NotificationCenter.default.post(name: Notification.Name.currencyPickerHasChanged, object: nil, userInfo: rowSelected)//send info to ViewController
         
     }
     

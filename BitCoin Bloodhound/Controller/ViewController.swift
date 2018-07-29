@@ -14,7 +14,11 @@ class ViewController: UIViewController {
     
     var allCurrency = CurrencyModel() //creating a constant referring to the CurrencyModel
     
+    var allCrypto = CryptoModel()
+    
     var currencyModelPicker: CurrencyPicker! // a var of type CurrencyPicker class
+    
+    var cryptoModelPicker: CryptoPicker! // a var of type CryptoPicker class
     
     var currencyPickerRow : Int = 5 // default selected row
     
@@ -58,11 +62,17 @@ class ViewController: UIViewController {
        
         //CurrencyPicker(self.currencyPicker, didSelectRow: 0, inComponent: 0)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData(_:)), name: Notification.Name.pickerHasChanged, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData(_:)), name: Notification.Name.currencyPickerHasChanged, object: nil) //get notifications from currency picker
+        
+         NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData(_:)), name: Notification.Name.cryptoPickerHasChanged, object: nil) //get notifications from crypto picker
         
         currencyModelPicker = CurrencyPicker() // an instance of the CurrencyPicker
         currencyPicker.delegate = currencyModelPicker
-        currencyPicker.dataSource = currencyModelPicker  //assign delegate/datasource
+        currencyPicker.dataSource = currencyModelPicker  //assign CurrencyPicker delegate/datasource
+        
+        cryptoModelPicker = CryptoPicker() // an instance of the CryptoPicker
+        cryptoPicker.delegate = cryptoModelPicker
+        cryptoPicker.dataSource = cryptoModelPicker  //assign CryptoPicker delegate/datasource
         
         //TODO:- find array member for the local currency, and set row
         if let localCurrencyCodeIndex = allCurrency.listOfCurrencyInformation.index(where: {$0.currencyCode == localCurrencyCode}) {

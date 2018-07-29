@@ -10,7 +10,8 @@ import Foundation
 
 extension Notification.Name {
     
-    static let pickerHasChanged = Notification.Name("pickerHasChanged") //extention to enable the identifier key will be the same in all classes
+    static let currencyPickerHasChanged = Notification.Name("currenyPickerHasChanged") //extention to enable the identifier key will be the same in all classes
+    static let cryptoPickerHasChanged = Notification.Name("cryptoPickerHasChanged") //extention to enable the identifier key will be the same in all classes
     
     
 }

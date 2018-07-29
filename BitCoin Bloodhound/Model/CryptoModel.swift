@@ -15,7 +15,9 @@ class CryptoModel {
     
     init(){  //all the data for all the currency
         
-        // listOfCryptoCurrency.append(Crypto(code: "BTC", image: "BTC")
+        listOfCryptoCurrency.append(Crypto(code: "BTC", image: UIImage(named: "BTC")!))
+            
+        listOfCryptoCurrency.append(Crypto(code: "LTC", image: UIImage(named: "LTC")!))
         // listOfCryptoCurrency.append(Crypto(code: "LTC", image: "LTC")
         
         //TODO:- Add crypto images

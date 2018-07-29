@@ -10,11 +10,7 @@ import UIKit
 
 class CryptoPicker: UIPickerView {
     
-    //TEST ONLY
 
-    var currencyModelData = CurrencyModel()
-    
-    //TEST ONLY
     
     var cryptoModelData = CryptoModel() // initialise an instance of the data model
 }
@@ -26,7 +22,7 @@ extension CryptoPicker: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return currencyModelData.listOfCurrencyInformation.count
+        return cryptoModelData.listOfCryptoCurrency.count
     }
     
     
@@ -50,15 +46,16 @@ extension CryptoPicker: UIPickerViewDelegate {
         
         let bottomImage = UIImageView(frame: CGRect(x: 0, y: 40, width: 100, height: 50)) // for the image
         
-        //set up formatting of the text:
-        toplabel.text = currencyModelData.listOfCurrencyInformation[row].currencyCode
+        toplabel.text = cryptoModelData.listOfCryptoCurrency[row].cryptoCode
         toplabel.textAlignment = .center
         toplabel.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.bold)
-        let color1 = hexStringToUIColor(hex: "#D7A554")  //refers to extension that converts hex color to UIColor
+        let color1 = hexStringToUIColor(hex: "#D7A554") //refers to extension that converts hex color to UIColor
         toplabel.textColor = color1
         
+        bottomImage.image = cryptoModelData.listOfCryptoCurrency[row].cryptoImage
+        bottomImage.contentMode = .scaleAspectFit
+    
         
-        bottomImage.image = currencyModelData.listOfCurrencyInformation[row].currencyFlag
         
         //add the subviews to the main view, and return the UIView required by the function
         view.addSubview(toplabel)
@@ -73,7 +70,7 @@ extension CryptoPicker: UIPickerViewDelegate {
         
         let rowSelected: [String: Int] = ["rowSelected": row]
         //change below
-        //NotificationCenter.default.post(name: Notification.Name.pickerHasChanged, object: nil, userInfo: rowSelected)//send info to ViewController
+        NotificationCenter.default.post(name: Notification.Name.cryptoPickerHasChanged, object: nil, userInfo: rowSelected)//send info to ViewController
         
     }
     
