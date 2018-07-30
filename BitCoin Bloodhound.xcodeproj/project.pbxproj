@@ -12,6 +12,7 @@
 		C0578C7F210B0E4F00B2EA01 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0578C7E210B0E4F00B2EA01 /* Crypto.swift */; };
 		C0578C81210B0E6400B2EA01 /* CryptoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0578C80210B0E6400B2EA01 /* CryptoModel.swift */; };
 		C0578C83210B128A00B2EA01 /* CryptoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0578C82210B128A00B2EA01 /* CryptoPicker.swift */; };
+		C0DE6906210F4882007FDE46 /* CryptoColours.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DE6905210F4882007FDE46 /* CryptoColours.swift */; };
 		C0E9BCD52105DA4C00DE51EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9BCD42105DA4C00DE51EE /* AppDelegate.swift */; };
 		C0E9BCD72105DA4C00DE51EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9BCD62105DA4C00DE51EE /* ViewController.swift */; };
 		C0E9BCDA2105DA4C00DE51EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0E9BCD82105DA4C00DE51EE /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		C0578C7E210B0E4F00B2EA01 /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
 		C0578C80210B0E6400B2EA01 /* CryptoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoModel.swift; sourceTree = "<group>"; };
 		C0578C82210B128A00B2EA01 /* CryptoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoPicker.swift; sourceTree = "<group>"; };
+		C0DE6905210F4882007FDE46 /* CryptoColours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoColours.swift; sourceTree = "<group>"; };
 		C0E9BCD12105DA4C00DE51EE /* BitCoin Bloodhound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BitCoin Bloodhound.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E9BCD42105DA4C00DE51EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0E9BCD62105DA4C00DE51EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				C0E9BCF521088A7F00DE51EE /* JSONData.swift */,
 				C0578C7E210B0E4F00B2EA01 /* Crypto.swift */,
 				C0578C80210B0E6400B2EA01 /* CryptoModel.swift */,
+				C0DE6905210F4882007FDE46 /* CryptoColours.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				C0E9BCD72105DA4C00DE51EE /* ViewController.swift in Sources */,
 				C0E9BCF621088A7F00DE51EE /* JSONData.swift in Sources */,
 				C0E9BCD52105DA4C00DE51EE /* AppDelegate.swift in Sources */,
+				C0DE6906210F4882007FDE46 /* CryptoColours.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

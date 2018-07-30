@@ -13,6 +13,8 @@ class CurrencyPicker: UIPickerView {
     
     var currencyModelData = CurrencyModel() //holds data from the CurrencyModel
     
+    var cryptoCode = "BTC"
+    
 }
 
 
@@ -40,7 +42,7 @@ extension CurrencyPicker: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         
-        // self.subviews[0].subviews[1].isHidden = true
+        
         
         
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100)) //the frame for the pickerview view
@@ -50,13 +52,21 @@ extension CurrencyPicker: UIPickerViewDelegate {
         let bottomImage = UIImageView(frame: CGRect(x: 0, y: 40, width: 100, height: 50)) // for the image
         
         //set up formatting of the text:
-        toplabel.text = currencyModelData.listOfCurrencyInformation[row].currencyCode
+        let currencyCode = currencyModelData.listOfCurrencyInformation[row].currencyCode
+        
+        
+        toplabel.text = currencyCode
         toplabel.textAlignment = .center
-        toplabel.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.bold)
-        let color1 = hexStringToUIColor(hex: "#D7A554")  //refers to extension that converts hex color to UIColor
-        toplabel.textColor = color1
+        toplabel.font = UIFont(name: "Academy Engraved LET", size: 16)
+         //refers to extension that converts hex color to UIColor
+        if let backgroundFontColour = dictCryptoColours[cryptoCode] {
+            let fontColour = backgroundFontColour[1]
+            
+            print("inside currency picker font code: \(fontColour)")
+            
+            toplabel.textColor = hexStringToUIColor(hex: fontColour)
         
-        
+        }
         bottomImage.image = currencyModelData.listOfCurrencyInformation[row].currencyFlag
         
         //add the subviews to the main view, and return the UIView required by the function
@@ -73,6 +83,11 @@ extension CurrencyPicker: UIPickerViewDelegate {
         let currencyRowSelected: [String: Int] = ["currencyRowSelected": row]
         
         NotificationCenter.default.post(name: Notification.Name.currencyPickerHasChanged, object: nil, userInfo: currencyRowSelected)//send info to ViewController
+        
+    }
+    
+    func changeView(){
+        
         
     }
     

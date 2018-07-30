@@ -12,6 +12,7 @@ import SwiftyJSON
 
 class ViewController: UIViewController {
     
+    
     var allCurrency = CurrencyModel() //creating a constant referring to the CurrencyModel
     
     var allCrypto = CryptoModel()
@@ -24,17 +25,18 @@ class ViewController: UIViewController {
     
     var cryptoPickerRow : Int = 0 // default selected Currency row
     
-    var baseBitCoinDataUrl  = "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTC"
-    
-    var baseCryptoCurrencyDataURL = "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,JPY,EUR"
-    
-    var finalBitCoinDataUrl = ""
-    
     let jSONData = JSONData() //to get data from JSONData class
+    
+    var backgroundColour : String = "" //default bitcoin colours
+    
+    var fontColour : String = ""   //default bitcoin colours
     
     
     
     //MARK:- Storyboard Connections
+    
+    
+    @IBOutlet var mainView: UIView! //to change background colour
     
     @IBOutlet weak var cryptoPicker: UIPickerView!
     
@@ -51,6 +53,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        //TODO:- update the background function
+        changeBackgroundColour() // call background function
         
         //TODO:- find correct array member / row from the local currency
         
@@ -70,6 +76,7 @@ class ViewController: UIViewController {
         currencyModelPicker = CurrencyPicker() // an instance of the CurrencyPicker
         currencyPicker.delegate = currencyModelPicker
         currencyPicker.dataSource = currencyModelPicker //assign CurrencyPicker delegate/datasource
+        
         
         cryptoModelPicker = CryptoPicker() // an instance of the CryptoPicker
         cryptoPicker.delegate = cryptoModelPicker
@@ -95,8 +102,7 @@ class ViewController: UIViewController {
             
         }
         
-        //finalBitCoinDataUrl = allCurrency.listOfCurrencyInformation[currencyPickerRow].currencyCode
-        //TODO:- UPDATE CRYPTOTYPE
+        
         updateCurrencyInfo()
     
     }
@@ -109,9 +115,9 @@ class ViewController: UIViewController {
             
         }
         
-        //finalBitCoinDataUrl = allCurrency.listOfCurrencyInformation[currencyPickerRow].currencyCode
-        //TODO:- UPDATE CRYPTOTYPE
+        
         updateCurrencyInfo()
+        
         
     }
     
@@ -122,8 +128,34 @@ class ViewController: UIViewController {
             print("view controller result \(result)")
             self.bitCoinPriceLabel.text =  self.allCurrency.listOfCurrencyInformation[self.currencyPickerRow].currencySymbol+result //combine currency price with currency symbol
             self.timeUpdateLabel.text = time
+            self.changeBackgroundColour()
         
         }
+    }
+    
+     //TODO:- update the background function
+    
+    func changeBackgroundColour(){
+        
+        let cryptoCode = allCrypto.listOfCryptoCurrency[cryptoPickerRow].cryptoCode
+        print(cryptoCode)
+        
+        if let backgroundFontColour = dictCryptoColours[cryptoCode] {
+        backgroundColour = backgroundFontColour[0]
+        fontColour = backgroundFontColour[1]
+            
+        print("background\(backgroundColour)")
+        print("font\(fontColour)")
+        
+        mainView.backgroundColor = hexStringToUIColor(hex: backgroundColour)
+            
+        priceProvidedBy.textColor = hexStringToUIColor(hex: fontColour)
+        bitCoinPriceLabel.textColor = hexStringToUIColor(hex: fontColour)
+        timeUpdateLabel.textColor = hexStringToUIColor(hex: fontColour)
+        
+        
+        }
+        
     }
    
 }
