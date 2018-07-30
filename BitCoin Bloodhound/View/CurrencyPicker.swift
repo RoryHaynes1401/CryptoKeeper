@@ -15,6 +15,8 @@ class CurrencyPicker: UIPickerView {
     
     var cryptoCode = "BTC"
     
+    let cryptoCodeModel = CryptoModel() //to access crytocode for font colour change
+    
 }
 
 
@@ -42,6 +44,9 @@ extension CurrencyPicker: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveCryptoData(_:)), name: Notification.Name.cryptoPickerHasChanged, object: nil)
+        
+        
         
         
         
@@ -57,7 +62,7 @@ extension CurrencyPicker: UIPickerViewDelegate {
         
         toplabel.text = currencyCode
         toplabel.textAlignment = .center
-        toplabel.font = UIFont(name: "Academy Engraved LET", size: 16)
+        toplabel.font = UIFont(name: "Academy Engraved LET", size: 20)
          //refers to extension that converts hex color to UIColor
         if let backgroundFontColour = dictCryptoColours[cryptoCode] {
             let fontColour = backgroundFontColour[1]
@@ -86,7 +91,18 @@ extension CurrencyPicker: UIPickerViewDelegate {
         
     }
     
-    func changeView(){
+    @objc func onDidReceiveCryptoData(_ notification:Notification) { //to get the current cryptoCode
+        
+        if let pickerRow = notification.userInfo?["cryptoRowSelected"] {
+            
+            let cryptoPickerRow = pickerRow as! Int //takes the userInfo data from the Notification centre, and assigns the selected row to the variable currencyPickerRow
+            
+            cryptoCode = cryptoCodeModel.listOfCryptoCurrency[cryptoPickerRow].cryptoCode
+            
+        }
+        
+        
+        
         
         
     }

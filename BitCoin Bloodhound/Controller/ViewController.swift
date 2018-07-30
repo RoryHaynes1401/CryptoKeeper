@@ -112,7 +112,7 @@ class ViewController: UIViewController {
         if let pickerRow = notification.userInfo?["cryptoRowSelected"] {
             
             cryptoPickerRow = pickerRow as! Int //takes the userInfo data from the Notification centre, and assigns the selected row to the variable currencyPickerRow
-            
+            currencyPicker.reloadAllComponents() //to update the font in the currency picker
         }
         
         
