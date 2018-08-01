@@ -30,3 +30,22 @@ func hexStringToUIColor (hex:String) -> UIColor {
         alpha: CGFloat(1.0)
     )
 }
+
+extension UILabel {
+    func textDropShadow() {
+        self.layer.masksToBounds = false
+        self.layer.shadowRadius = 0.0
+        self.layer.shadowOpacity = 0.5
+        self.layer.shadowOffset = CGSize(width: 2, height: -2)
+        self.layer.shadowColor = UIColor.darkText.cgColor
+       
+    }
+    
+    static func createCustomLabel() -> UILabel {
+        let label = UILabel()
+        label.textDropShadow()
+        return label
+    }
+}
+
+

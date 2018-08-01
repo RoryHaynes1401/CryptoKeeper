@@ -23,11 +23,13 @@ class ViewController: UIViewController {
     
     var currencyPickerRow : Int = 0 // default selected Currency row
     
+    var previousCryptoRow : Int = 0 //to track if the change is up or down
+    
     var cryptoPickerRow : Int = 0 // default selected Currency row
     
     let jSONData = JSONData() //to get data from JSONData class
     
-    var backgroundColour : String = "" //default bitcoin colours
+    var backgroundPicture : String = "" //default bitcoin colours
     
     var fontColour : String = ""   //default bitcoin colours
     
@@ -35,6 +37,7 @@ class ViewController: UIViewController {
     
     //MARK:- Storyboard Connections
     
+    @IBOutlet weak var backgroundImage: UIImageView!
     
     @IBOutlet var mainView: UIView! //to change background colour
     
@@ -54,14 +57,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        timeUpdateLabel.makeOutLine()
         
-        //TODO:- update the background function
+        priceProvidedBy.makeOutLine()
+        
+        bitCoinPriceLabel.makeOutLine()
+        
+        
         changeBackgroundColour() // call background function
         
-        //TODO:- find correct array member / row from the local currency
+       
         
         let locale = Locale.current
-        // let localCurrencySymbol = locale.currencySymbol!
         let localCurrencyCode = locale.currencyCode!
         
         
@@ -82,7 +89,7 @@ class ViewController: UIViewController {
         cryptoPicker.delegate = cryptoModelPicker
         cryptoPicker.dataSource = cryptoModelPicker  //assign CryptoPicker delegate/datasource
         
-        //TODO:- find array member for the local currency, and set row
+        
         if let localCurrencyCodeIndex = allCurrency.listOfCurrencyInformation.index(where: {$0.currencyCode == localCurrencyCode}) {
                 currencyPickerRow = localCurrencyCodeIndex
                 currencyPicker.selectRow(currencyPickerRow, inComponent: 0, animated: false)
@@ -109,13 +116,18 @@ class ViewController: UIViewController {
     
     @objc func onDidReceiveCryptoData(_ notification:Notification) {
         
+        previousCryptoRow = cryptoPickerRow
+        
+        
         if let pickerRow = notification.userInfo?["cryptoRowSelected"] {
+            
+           
             
             cryptoPickerRow = pickerRow as! Int //takes the userInfo data from the Notification centre, and assigns the selected row to the variable currencyPickerRow
             currencyPicker.reloadAllComponents() //to update the font in the currency picker
         }
         
-        
+        changeBackgroundColour()
         updateCurrencyInfo()
         
         
@@ -127,13 +139,17 @@ class ViewController: UIViewController {
         jSONData.getBitCoinData(cryptoType: allCrypto.listOfCryptoCurrency[cryptoPickerRow].cryptoCode, currencyCode: allCurrency.listOfCurrencyInformation[currencyPickerRow].currencyCode) { (result,time) in
             print("view controller result \(result)")
             self.bitCoinPriceLabel.text =  self.allCurrency.listOfCurrencyInformation[self.currencyPickerRow].currencySymbol+result //combine currency price with currency symbol
+            
+            //TODO:- test outline
+            self.bitCoinPriceLabel.makeOutLine()
             self.timeUpdateLabel.text = time
-            self.changeBackgroundColour()
+            self.timeUpdateLabel.makeOutLine()
+            
         
         }
     }
     
-     //TODO:- update the background function
+     //TODO:- change the backgound function
     
     func changeBackgroundColour(){
         
@@ -141,17 +157,37 @@ class ViewController: UIViewController {
         print(cryptoCode)
         
         if let backgroundFontColour = dictCryptoColours[cryptoCode] {
-        backgroundColour = backgroundFontColour[0]
-        fontColour = backgroundFontColour[1]
             
-        print("background\(backgroundColour)")
-        print("font\(fontColour)")
+           
+            backgroundPicture = backgroundFontColour[0]
+            
+           
         
-        mainView.backgroundColor = hexStringToUIColor(hex: backgroundColour)
+        
             
-        priceProvidedBy.textColor = hexStringToUIColor(hex: fontColour)
-        bitCoinPriceLabel.textColor = hexStringToUIColor(hex: fontColour)
-        timeUpdateLabel.textColor = hexStringToUIColor(hex: fontColour)
+            if previousCryptoRow < cryptoPickerRow {
+            
+        UIView.transition(with: backgroundImage, duration: 0.5, options: .transitionFlipFromTop, animations: {
+            self.backgroundImage.image = UIImage(named: self.backgroundPicture)
+        })
+            }else{
+                
+                UIView.transition(with: backgroundImage, duration: 0.5, options: .transitionFlipFromBottom, animations: {
+                    self.backgroundImage.image = UIImage(named: self.backgroundPicture)
+             })
+                
+                
+                
+                
+                
+                
+                
+            }
+            
+        
+        
+
+            
         
         
         }

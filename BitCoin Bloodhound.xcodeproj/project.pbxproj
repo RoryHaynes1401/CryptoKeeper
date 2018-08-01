@@ -12,6 +12,7 @@
 		C0578C7F210B0E4F00B2EA01 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0578C7E210B0E4F00B2EA01 /* Crypto.swift */; };
 		C0578C81210B0E6400B2EA01 /* CryptoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0578C80210B0E6400B2EA01 /* CryptoModel.swift */; };
 		C0578C83210B128A00B2EA01 /* CryptoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0578C82210B128A00B2EA01 /* CryptoPicker.swift */; };
+		C0C1981D2111EB980082611F /* TextOutlineExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C1981C2111EB980082611F /* TextOutlineExtension.swift */; };
 		C0DE6906210F4882007FDE46 /* CryptoColours.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DE6905210F4882007FDE46 /* CryptoColours.swift */; };
 		C0E9BCD52105DA4C00DE51EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9BCD42105DA4C00DE51EE /* AppDelegate.swift */; };
 		C0E9BCD72105DA4C00DE51EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9BCD62105DA4C00DE51EE /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 		C0578C7E210B0E4F00B2EA01 /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
 		C0578C80210B0E6400B2EA01 /* CryptoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoModel.swift; sourceTree = "<group>"; };
 		C0578C82210B128A00B2EA01 /* CryptoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoPicker.swift; sourceTree = "<group>"; };
+		C0C1981C2111EB980082611F /* TextOutlineExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOutlineExtension.swift; sourceTree = "<group>"; };
 		C0DE6905210F4882007FDE46 /* CryptoColours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoColours.swift; sourceTree = "<group>"; };
 		C0E9BCD12105DA4C00DE51EE /* BitCoin Bloodhound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BitCoin Bloodhound.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E9BCD42105DA4C00DE51EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				C0E9BCF32107936100DE51EE /* NotificationNameExtension.swift */,
 				C0E9BCF72108907500DE51EE /* FormatTimeExtension.swift */,
 				C0578C7C2109F62C00B2EA01 /* HexStringExtension.swift */,
+				C0C1981C2111EB980082611F /* TextOutlineExtension.swift */,
 			);
 			path = "BitCoin Bloodhound";
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				C0578C7F210B0E4F00B2EA01 /* Crypto.swift in Sources */,
 				C0E9BCF02106ED4B00DE51EE /* Currency.swift in Sources */,
 				C0578C83210B128A00B2EA01 /* CryptoPicker.swift in Sources */,
+				C0C1981D2111EB980082611F /* TextOutlineExtension.swift in Sources */,
 				C0E9BCEC2106EC5800DE51EE /* CurrencyPicker.swift in Sources */,
 				C0578C7D2109F62C00B2EA01 /* HexStringExtension.swift in Sources */,
 				C0578C81210B0E6400B2EA01 /* CryptoModel.swift in Sources */,

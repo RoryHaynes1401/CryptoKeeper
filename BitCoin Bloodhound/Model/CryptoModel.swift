@@ -21,8 +21,7 @@ class CryptoModel {
         listOfCryptoCurrency.append(Crypto(code: "XRP", image: UIImage(named: "XRP")!))
         // listOfCryptoCurrency.append(Crypto(code: "LTC", image: "LTC")
         
-        //TODO:- Add crypto images
-         //TODO:- Add other cypto currencies images
+        //TODO:- Add crypto background info
     }
 
 }

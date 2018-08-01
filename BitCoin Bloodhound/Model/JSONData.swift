@@ -55,7 +55,7 @@ class JSONData {
     
     func updateBitCoinPrice(currencyCode : String, json : JSON)-> (String){
         
-        //TODO:- Implement a menthod to parse the JSon, and update the display.
+        
         
         var bitCoinCurrencyValueResult = ""
         
@@ -69,8 +69,6 @@ class JSONData {
         else {
             
             
-            //TODO:- print to screen that connection failed
-            print("failed")
             bitCoinCurrencyValueResult = "No data"
             
         }

@@ -10,10 +10,10 @@ import Foundation
 
 var dictCryptoColours = [ // hexcode : [background,font]
 
-    "BTC" : ["#FFF2D6","#744221"], //light gold / dark gold
-    "LTC" : ["#B3ADB9","#070707"], //silver / black
-    "ETH" : ["#384017","#BE9449"], //green / gold
-    "XRP" : ["#57472F","#BB945E"], //darkgold / light gold
+    "BTC" : ["bitcoinBackground"], //light gold / dark gold
+    "LTC" : ["litecoinBackground"], //silver / black
+    "ETH" : ["ethereumBackground"], //green / gold
+    "XRP" : ["rippleBackground"], //darkgold / light gold
     
 
 ]

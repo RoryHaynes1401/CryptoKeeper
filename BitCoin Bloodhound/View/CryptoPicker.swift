@@ -10,6 +10,8 @@ import UIKit
 
 class CryptoPicker: UIPickerView {
     
+    let coinSize : Int = 100
+    
 
     
     var cryptoModelData = CryptoModel() // initialise an instance of the data model
@@ -31,7 +33,7 @@ extension CryptoPicker: UIPickerViewDataSource {
 extension CryptoPicker: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat { //define height of each component
-        return 100
+        return CGFloat(coinSize)
     }
     
     
@@ -39,19 +41,19 @@ extension CryptoPicker: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         
         
-        //TODO:- change below
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100)) //the frame for the pickerview view
         
-        let toplabel = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100)) // for the currency code
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: coinSize, height: coinSize)) //the frame for the pickerview view
+        
+        let mainView = UIImageView(frame: CGRect(x: 0, y: 0, width: coinSize, height: coinSize)) // for the currency code
         
         
-        toplabel.image = cryptoModelData.listOfCryptoCurrency[row].cryptoImage
-        toplabel.contentMode = .scaleAspectFit
+        mainView.image = cryptoModelData.listOfCryptoCurrency[row].cryptoImage
+        mainView.contentMode = .scaleToFill
     
         
         
         //add the subviews to the main view, and return the UIView required by the function
-        view.addSubview(toplabel)
+        view.addSubview(mainView)
         
         
         return view

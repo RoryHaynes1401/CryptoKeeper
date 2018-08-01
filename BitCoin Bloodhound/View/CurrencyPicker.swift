@@ -44,7 +44,7 @@ extension CurrencyPicker: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         
-        NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveCryptoData(_:)), name: Notification.Name.cryptoPickerHasChanged, object: nil)
+        //NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveCryptoData(_:)), name: Notification.Name.cryptoPickerHasChanged, object: nil)
         
         
         
@@ -52,32 +52,43 @@ extension CurrencyPicker: UIPickerViewDelegate {
         
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100)) //the frame for the pickerview view
         
-        let toplabel = UILabel(frame: CGRect(x: 0, y: 5, width: 100, height: 30)) // for the currency code
-        
-        let bottomImage = UIImageView(frame: CGRect(x: 0, y: 40, width: 100, height: 50)) // for the image
-        
+        let toplabel = UILabel(frame: CGRect(x: 0, y: 5, width: 100, height: 40)) // for the currency code
+       
+        let bottomImage = UIImageView(frame: CGRect(x: 0, y: 50, width: 100, height: 50)) // for the image
+       
         //set up formatting of the text:
         let currencyCode = currencyModelData.listOfCurrencyInformation[row].currencyCode
         
-        
+        print("font size\(toplabel.font.pointSize)")
         toplabel.text = currencyCode
-        toplabel.textAlignment = .center
-        toplabel.font = UIFont(name: "Academy Engraved LET", size: 20)
-         //refers to extension that converts hex color to UIColor
-        if let backgroundFontColour = dictCryptoColours[cryptoCode] {
-            let fontColour = backgroundFontColour[1]
-            
-            print("inside currency picker font code: \(fontColour)")
-            
-            toplabel.textColor = hexStringToUIColor(hex: fontColour)
         
-        }
+        
+        
+        
+        toplabel.textAlignment = .center
+        //toplabel.font = UIFont(name: "Times New Roman Bold", size: 20)
+        toplabel.font = UIFont.boldSystemFont(ofSize: 30)
+        
+        
+        toplabel.makeOutLine()
+        
+         //refers to extension that converts hex color to UIColor
+//        if let backgroundFontColour = dictCryptoColours[cryptoCode] {
+//            let fontColour = backgroundFontColour[1]
+//
+//            print("inside currency picker font code: \(fontColour)")
+//
+//            toplabel.textColor = hexStringToUIColor(hex: fontColour)
+//
+//        }
+        
         bottomImage.image = currencyModelData.listOfCurrencyInformation[row].currencyFlag
+      
         
         //add the subviews to the main view, and return the UIView required by the function
-        view.addSubview(toplabel)
-        view.addSubview(bottomImage)
         
+        view.addSubview(bottomImage)
+        view.addSubview(toplabel)
         return view
         
         

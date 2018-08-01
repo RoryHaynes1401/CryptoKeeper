@@ -40,7 +40,7 @@ class CurrencyModel {
         listOfCurrencyInformation.append(Currency(code: "USD", symbol: "$", flag: UIImage(named: "USD")!))
         listOfCurrencyInformation.append(Currency(code: "ZAR", symbol: "R", flag: UIImage(named: "ZAR")!))
         
-        //TODO:- check API for more supported currencies
+        
         
        
         
