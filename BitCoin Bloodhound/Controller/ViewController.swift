@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     
     var previousCryptoRow : Int = 0 //to track if the change is up or down
     
-    var cryptoPickerRow : Int = 0 // default selected Currency row
+    var cryptoPickerRow : Int = 3 // default selected Currency row (BTC)
     
     let jSONData = JSONData() //to get data from JSONData class
     
@@ -68,13 +68,13 @@ class ViewController: UIViewController {
         
        
         
-        let locale = Locale.current
-        let localCurrencyCode = locale.currencyCode!
         
         
-        currencyPicker.selectRow(5, inComponent: 0, animated: false)
+        
+        //currencyPicker.selectRow(5, inComponent: 0, animated: true)
        
         //CurrencyPicker(self.currencyPicker, didSelectRow: 0, inComponent: 0)
+        // currencyModelPicker.pickerView(currencyPicker, didSelectRow: 5, inComponent: 0)
         
         NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveCurrencyData(_:)), name: Notification.Name.currencyPickerHasChanged, object: nil) //get notifications from currency picker
         
@@ -90,14 +90,10 @@ class ViewController: UIViewController {
         cryptoPicker.dataSource = cryptoModelPicker  //assign CryptoPicker delegate/datasource
         
         
-        if let localCurrencyCodeIndex = allCurrency.listOfCurrencyInformation.index(where: {$0.currencyCode == localCurrencyCode}) {
-                currencyPickerRow = localCurrencyCodeIndex
-                currencyPicker.selectRow(currencyPickerRow, inComponent: 0, animated: false)
-            
-            }
+        startAnimation()
         
-        updateCurrencyInfo()
-        // currencyModelPicker.pickerView(currencyPicker, didSelectRow: 5, inComponent: 0)  //automatically move to a row
+        
+          //automatically move to a row
         
     }
     
@@ -170,29 +166,57 @@ class ViewController: UIViewController {
         UIView.transition(with: backgroundImage, duration: 0.5, options: .transitionFlipFromTop, animations: {
             self.backgroundImage.image = UIImage(named: self.backgroundPicture)
         })
-            }else{
+            }else if previousCryptoRow > cryptoPickerRow{
                 
                 UIView.transition(with: backgroundImage, duration: 0.5, options: .transitionFlipFromBottom, animations: {
                     self.backgroundImage.image = UIImage(named: self.backgroundPicture)
-             })
-                
-                
-                
-                
-                
-                
+                })
                 
             }
-            
-        
-        
-
-            
-        
-        
+           
         }
         
     }
+    
+    func startAnimation(){
+        
+        let locale = Locale.current
+        let localCurrencyCode = locale.currencyCode! //check local currency code
+        
+        
+        if let localCurrencyCodeIndex = allCurrency.listOfCurrencyInformation.index(where: {$0.currencyCode == localCurrencyCode}) {
+            currencyPicker.selectRow(currencyPickerRow, inComponent: 0, animated: true) // row for local currency
+            currencyPicker.showsSelectionIndicator = true
+            self.currencyPickerRow = localCurrencyCodeIndex //set current currency row to local currency row (otherwise default)
+        }
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: { //scroll to end of picker
+//            let lastCurrencyRow = self.allCurrency.listOfCurrencyInformation.count - 1
+//
+//            let lastCrytoRow = self.allCrypto.listOfCryptoCurrency.count - 1
+//            self.currencyPicker.selectRow(lastCurrencyRow, inComponent: 0, animated: true) //move to last row
+//            self.cryptoPicker.selectRow(lastCrytoRow, inComponent: 0, animated: true)
+//
+//        }
+//        )
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute: { //scroll back to local currency
+
+
+            self.currencyPicker.selectRow(self.currencyPickerRow, inComponent: 0, animated: true) //move to default row / local currency row
+            self.cryptoPicker.selectRow(self.cryptoPickerRow, inComponent: 0, animated: true)
+            self.updateCurrencyInfo()
+        }
+        )
+        
+        
+        
+        
+        
+        
+    }
+    
+    
+    
    
 }
 

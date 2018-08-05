@@ -14,6 +14,8 @@ var dictCryptoColours = [ // hexcode : [background,font]
     "LTC" : ["litecoinBackground"], //silver / black
     "ETH" : ["ethereumBackground"], //green / gold
     "XRP" : ["rippleBackground"], //darkgold / light gold
-    
+    "ZEC" : ["zcashBackground"],
+    "DASH" : ["dashBackground"],
+    "XMR" : ["moneroBackground"]
 
 ]

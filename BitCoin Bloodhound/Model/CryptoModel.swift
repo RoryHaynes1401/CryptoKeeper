@@ -15,10 +15,13 @@ class CryptoModel {
     
     init(){  //all the data for all the currency
         
-        listOfCryptoCurrency.append(Crypto(code: "BTC", image: UIImage(named: "BTC")!))
         listOfCryptoCurrency.append(Crypto(code: "LTC", image: UIImage(named: "LTC")!))
         listOfCryptoCurrency.append(Crypto(code: "ETH", image: UIImage(named: "ETH")!))
+        listOfCryptoCurrency.append(Crypto(code: "ZEC", image: UIImage(named: "ZEC")!))
+        listOfCryptoCurrency.append(Crypto(code: "BTC", image: UIImage(named: "BTC")!))
+        listOfCryptoCurrency.append(Crypto(code: "DASH", image: UIImage(named: "DASH")!))
         listOfCryptoCurrency.append(Crypto(code: "XRP", image: UIImage(named: "XRP")!))
+        listOfCryptoCurrency.append(Crypto(code: "XMR", image: UIImage(named: "XMR")!))
         // listOfCryptoCurrency.append(Crypto(code: "LTC", image: "LTC")
         
         //TODO:- Add crypto background info
