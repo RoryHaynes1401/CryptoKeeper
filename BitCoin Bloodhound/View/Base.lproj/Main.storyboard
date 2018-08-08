@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,21 +24,12 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gPF-eE-2Xx" userLabel="Top View">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="318"/>
-                                <subviews>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFp-mR-adO">
-                                        <rect key="frame" x="47" y="51" width="320" height="216"/>
-                                    </pickerView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="aFp-mR-adO" firstAttribute="centerY" secondItem="gPF-eE-2Xx" secondAttribute="centerY" id="00t-fD-ieF"/>
-                                    <constraint firstItem="aFp-mR-adO" firstAttribute="centerX" secondItem="gPF-eE-2Xx" secondAttribute="centerX" id="OO6-Hy-1lP"/>
-                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEJ-oQ-c91" userLabel="Middle View">
                                 <rect key="frame" x="0.0" y="318" width="414" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nFc-sD-TMw">
-                                        <rect key="frame" x="0.0" y="0.66666666666668561" width="414" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                         <color key="backgroundColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="40"/>
                                         <color key="textColor" red="0.84313725490196079" green="0.6470588235294118" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -57,11 +49,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lw2-7e-BLO" userLabel="Bottom View">
                                 <rect key="frame" x="0.0" y="418" width="414" height="318"/>
                                 <subviews>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4P-By-kCu">
-                                        <rect key="frame" x="47" y="51" width="320" height="216"/>
-                                    </pickerView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="b2i-au-4I4">
-                                        <rect key="frame" x="47" y="310" width="320" height="0.0"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="test" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="b2i-au-4I4">
+                                        <rect key="frame" x="0.33333333333334281" y="282" width="414" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="25"/>
                                         <color key="textColor" red="0.84313725490196079" green="0.6470588235294118" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -75,38 +65,45 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="b2i-au-4I4" secondAttribute="bottom" constant="8" id="0W7-5L-VZ3"/>
-                                    <constraint firstItem="obe-YR-jFr" firstAttribute="leading" secondItem="j4P-By-kCu" secondAttribute="leading" id="9O8-dh-awL"/>
-                                    <constraint firstItem="j4P-By-kCu" firstAttribute="trailing" secondItem="obe-YR-jFr" secondAttribute="trailing" id="ADI-6J-7Qv"/>
-                                    <constraint firstItem="j4P-By-kCu" firstAttribute="centerX" secondItem="Lw2-7e-BLO" secondAttribute="centerX" id="BgW-x0-ow0"/>
-                                    <constraint firstItem="b2i-au-4I4" firstAttribute="leading" secondItem="Lw2-7e-BLO" secondAttribute="leading" constant="47" id="EBD-GJ-kmo"/>
-                                    <constraint firstAttribute="trailing" secondItem="b2i-au-4I4" secondAttribute="trailing" constant="47" id="LI2-RA-jVa"/>
-                                    <constraint firstItem="b2i-au-4I4" firstAttribute="trailing" secondItem="j4P-By-kCu" secondAttribute="trailing" id="THg-5t-CHH"/>
-                                    <constraint firstItem="j4P-By-kCu" firstAttribute="centerY" secondItem="Lw2-7e-BLO" secondAttribute="centerY" id="Wwe-xF-QX0"/>
                                     <constraint firstItem="obe-YR-jFr" firstAttribute="top" secondItem="Lw2-7e-BLO" secondAttribute="top" id="b1s-9j-j6w"/>
                                     <constraint firstItem="obe-YR-jFr" firstAttribute="leading" secondItem="Lw2-7e-BLO" secondAttribute="leading" constant="47" id="ec2-wj-g53"/>
                                     <constraint firstAttribute="trailing" secondItem="obe-YR-jFr" secondAttribute="trailing" constant="47" id="vtk-F0-HAC"/>
                                 </constraints>
                             </view>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFp-mR-adO">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="368"/>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4P-By-kCu">
+                                <rect key="frame" x="0.0" y="368" width="414" height="368"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="j4P-By-kCu" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="0HB-1t-y0Q"/>
                             <constraint firstItem="wEJ-oQ-c91" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="117-lS-7RS"/>
                             <constraint firstItem="gPF-eE-2Xx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="6XM-1I-6im"/>
                             <constraint firstItem="GhH-1f-5KI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="8QK-aL-z3E"/>
                             <constraint firstItem="gPF-eE-2Xx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8WT-XR-VdU"/>
+                            <constraint firstItem="j4P-By-kCu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9AS-46-Pbw"/>
                             <constraint firstItem="GhH-1f-5KI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CeW-sv-bpy"/>
                             <constraint firstItem="wEJ-oQ-c91" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DF0-aC-DUb"/>
                             <constraint firstItem="gPF-eE-2Xx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Dla-Gu-t10"/>
+                            <constraint firstItem="aFp-mR-adO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="KLn-Oc-lyX"/>
                             <constraint firstItem="Lw2-7e-BLO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PcQ-uK-pZ9"/>
                             <constraint firstItem="wEJ-oQ-c91" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TdK-lb-f6f"/>
                             <constraint firstItem="Lw2-7e-BLO" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ZCs-yZ-ldZ"/>
                             <constraint firstItem="wEJ-oQ-c91" firstAttribute="top" secondItem="gPF-eE-2Xx" secondAttribute="bottom" id="cYP-1z-Fla"/>
+                            <constraint firstItem="aFp-mR-adO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dla-fo-lmb"/>
                             <constraint firstItem="Lw2-7e-BLO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gFJ-Rf-Rtk"/>
                             <constraint firstItem="Lw2-7e-BLO" firstAttribute="top" secondItem="wEJ-oQ-c91" secondAttribute="bottom" id="jHK-PO-Cl3"/>
                             <constraint firstItem="GhH-1f-5KI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qtl-iF-KmN"/>
+                            <constraint firstItem="j4P-By-kCu" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="sK6-6c-s4b"/>
+                            <constraint firstItem="aFp-mR-adO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="seG-BB-085"/>
+                            <constraint firstItem="j4P-By-kCu" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uQC-yD-cYa"/>
+                            <constraint firstItem="aFp-mR-adO" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="vYH-cg-6e9"/>
                             <constraint firstItem="wEJ-oQ-c91" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wh3-Yg-ZOP"/>
                             <constraint firstItem="GhH-1f-5KI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wio-mI-S5o"/>
+                            <constraint firstItem="j4P-By-kCu" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="xl4-Ib-F8S"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
