@@ -63,6 +63,10 @@ class ViewController: UIViewController {
         
         bitCoinPriceLabel.makeOutLine()
         
+        priceProvidedBy.text = "Price source: https://min-api.cryptocompare.com"
+        
+        priceProvidedBy.isHidden = true //TODO:- Might show this, undecided.
+        
         
         changeBackgroundColour() // call background function
         
@@ -199,7 +203,7 @@ class ViewController: UIViewController {
 //
 //        }
 //        )
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute: { //scroll back to local currency
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: { //scroll back to local currency
 
 
             self.currencyPicker.selectRow(self.currencyPickerRow, inComponent: 0, animated: true) //move to default row / local currency row
